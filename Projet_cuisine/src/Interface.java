@@ -2,10 +2,18 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
+import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 public class Interface extends Frame implements WindowListener{
+	
+	public static Toolkit t = Toolkit.getDefaultToolkit();
+	public static Dimension d = t.getScreenSize();
+	
+	public int HauteurFenetre = d.width/2;
+	public int LargeurFenetre = d.height/2;
+	
 	
 	public static void main(String[] args) {
 		new Interface();
@@ -13,16 +21,15 @@ public class Interface extends Frame implements WindowListener{
 	
 	public Interface() {
 		
-		Dimension size = getSize();
-		
-		this .setPreferredSize(new Dimension(750,340));
+		this.setPreferredSize(new Dimension(HauteurFenetre,LargeurFenetre));
 		
 		this.setLayout(new BorderLayout());
 		
 		Categorie panneaudedroite = new Categorie();
 		this.add(panneaudedroite, BorderLayout.EAST);
 		
-		
+		Recette panneaucentral = new Recette();
+		this.add(panneaucentral, BorderLayout.CENTER);
 		
 		this.addWindowListener(this);
 		this.setTitle("Interface du projet");
