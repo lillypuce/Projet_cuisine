@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.WindowEvent;
@@ -12,9 +13,16 @@ public class Interface extends Frame implements WindowListener{
 	
 	public Interface() {
 		
-		this .setPreferredSize(new Dimension(640,340));
+		Dimension size = getSize();
+		
+		this .setPreferredSize(new Dimension(750,340));
 		
 		this.setLayout(new BorderLayout());
+		
+		Categorie panneaudedroite = new Categorie();
+		this.add(panneaudedroite, BorderLayout.EAST);
+		
+		
 		
 		this.addWindowListener(this);
 		this.setTitle("Interface du projet");
