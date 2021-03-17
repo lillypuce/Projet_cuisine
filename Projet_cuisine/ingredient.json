@@ -1,0 +1,47 @@
+{
+    "ingredients": [
+        {
+            "id": "sel",
+            "type": "Sel",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "poivre",
+            "type": "Poivre",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "huile_olive",
+            "type": "Huile d'olive",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "pate_à_pizza",
+            "type": "Pate à pizza",
+            "recettes":[
+
+            ]
+        },
+        {
+            "id": "purée_de_tomates",
+            "type": "Purée de tomates",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "mozzarella",
+            "type": "Mozzarella",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "basilic",
+            "type": "Feuilles de basilic frais",
+            "recettes":[
+            ]
+        }
+    ]
+}
