@@ -266,6 +266,62 @@
                 "6. Humidifiez vos mains et formez des petits pâtés de riz de forme ovale, de la longueur des lamelles de poisson. Posez une lamelle de saumon sur chaque boulette de riz.",
                 "7. Disposez les sushis dans un plat, recouvrez-les de film alimentaire et réservez au frais jusqu’au moment de servir."
             ]
+        },
+        {
+            "id": "chevre_chaud_au_miel",
+            "nom": "Chèvre chaud au miel",
+            "categorie": "Entrée",
+            "sous categorie": "Chaude",
+            "ingredients":[
+                {
+                    "id": "sel",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id":  "poivre",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id": "chevre",
+                    "quantite": 4
+                },
+                {
+                    "id": "pain_de_mie",
+                    "quantite": 4,
+                    "dosage": "tranches"
+                },
+                {
+                    "id": "miel",
+                    "quantite": 4,
+                    "dosage": "cuilléres à café"
+                },
+                {
+                    "id": "noix",
+                    "quantite": 4,
+                    "dosage": "cerneaux"
+                },
+                {
+                    "id": "herbes",
+                    "quantite": 1,
+                    "dosage": "cuilléres à soupe"
+                },
+                {
+                    "id": "thym",
+                    "quantite": 1,
+                    "dosage": "cuilléres à soupe"
+                }
+            ],
+            "consignes":[
+                "1. Préchauffez le four à 180°C.",
+                "2. Placez une feuille de papier cuisson sur une plaque allant au four.",
+                "3. Déposez les tranches de pain de mie sur la plaque recouverte de papier cuisson.",
+                "4. Déposez un chèvre frais sur chaque tranche de pain de mie.",
+                "5. Versez le miel sur le dessus de chaque chèvre frais puis parsemez-les de cerneaux de noix concassés, d’herbes de Provence et de thym séché. Enfin, salez et poivrez à votre goût.",
+                "6. Enfournez la plaque de four et faites-cuire les toasts au chèvre frais pendant 10 minutes, jusqu’à ce que les fromage soient bien gratinés.",
+                "7. Servez aussitôt les toasts au chèvre frais dans les assiettes pour accompagner une salade verte assaisonnée à l’entrée. Vous pouvez également les servir tel quel à l’apéritif."
+            ]
         }
     ]
 }

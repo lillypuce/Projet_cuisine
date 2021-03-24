@@ -180,7 +180,45 @@
             "type": "Vinaigre",
             "recettes":[
             ]
+        },
+        {
+            "id": "chevre",
+            "type": "Chèvre frais",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "pain_de_mie",
+            "type": "Pain de mie",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "miel",
+            "type": "Miel",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "noix",
+            "type": "Noix",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "herbes",
+            "type": "Herbes de Provence",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "thym",
+            "type": "Thym",
+            "recettes":[
+            ]
         }
+
+        
         
 
         
