@@ -1,18 +1,23 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.List;
 import java.awt.Panel;
 import java.awt.Toolkit;
+import java.awt.event.ItemListener;
 
 public class Categorie extends Panel {
 	
-	Panel header;
+	public static String[] categ = {"Entrée","Plats","Dessert"};
 	
-	public Categorie() {
-		header = new Panel();
-		header.setBackground(Color.GRAY);
+	public Categorie(ItemListener l) {
 		
-		this.add(header);
+		List lst_categorie = new List(29);
 		
+		for (int i=0; i< categ.length; i++) {
+			lst_categorie.add(Categorie.categ[i]);
+		}
+		this.add(lst_categorie);
+		lst_categorie.addItemListener(l);
 	}
 
 }
