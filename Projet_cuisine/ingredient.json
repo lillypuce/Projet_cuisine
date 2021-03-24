@@ -13,6 +13,12 @@
             ]
         },
         {
+            "id": "sucre",
+            "type": "Sucre",
+            "recettes":[
+            ]
+        },
+        {
             "id": "huile_olive",
             "type": "Huile d'olive",
             "recettes":[
@@ -144,7 +150,38 @@
             "type": "Chapelure",
             "recettes":[
             ]
+        },
+        {
+            "id": "saumon",
+            "type": "Saumon",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "riz",
+            "type": "Riz rond",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "eau",
+            "type": "Eau",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "vinaigre_riz",
+            "type": "Vinaigre de riz",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "vinaire",
+            "type": "Vinaigre",
+            "recettes":[
+            ]
         }
+        
 
         
     ]

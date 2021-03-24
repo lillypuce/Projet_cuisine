@@ -196,12 +196,12 @@
                 {
                     "id": "farine",
                     "quantite": 8,
-                    "dosage": "cuilléres à soupes"
+                    "dosage": "cuilléres à soupe"
                 },
                 {
                     "id": "chapelure",
                     "quantite": 8,
-                    "dosage": "cuilléres à soupes"
+                    "dosage": "cuilléres à soupe"
                 },
                 {
                     "id": "beurre",
@@ -213,6 +213,58 @@
                 "1. Dans une assiette plate, versez la farine et dans une autre la chapelure. Dans une assiette creuse, battez les œufs pour en faire une omelette.",
                 "2. Salez et poivrez à votre convenance les filets de poisson des deux côtés. Coupez-les en gros morceaux. Farinez-les puis imprégnez-les des deux côtés tour à tour d’œufs battus puis de chapelure.",
                 "3. Faites fondre du beurre dans une poêle et faites frire votre poisson pané jusqu'à ce que la panure soit bien dorée. Servez immédiatement avec par exemple des frites et une salade ! Pensez à proposer un citron coupé en 2, le jus de citron est excellent sur le poisson."
+            ]
+        },
+        {
+            "id": "sushi",
+            "nom": "Sushi au saumone",
+            "categorie": "Entrée",
+            "sous categorie": "Froide",
+            "ingredients":[
+                {
+                    "id": "sel",
+                    "quantite": 2,
+                    "dosage": "cuilléres à café"
+                },
+                {
+                    "id":  "saumon",
+                    "quantite": 600,
+                    "dosage": "g de filet"
+                },
+                {
+                    "id": "riz",
+                    "quantite": 350,
+                    "dosage": "g"
+                },
+                {
+                    "id": "eau",
+                    "quantite": 35,
+                    "dosage": "cl"
+                },
+                {
+                    "id": "vinaigre_riz",
+                    "quantite": 4,
+                    "dosage": "cuilléres à soupe"
+                },
+                {
+                    "id": "sucre",
+                    "quantite": 2,
+                    "dosage": "cuilléres à soupe"
+                },
+                {
+                    "id": "vinaigre",
+                    "quantite": 2,
+                    "dosage": "cuilléres à soupe"
+                }
+            ],
+            "consignes":[
+                "1. Lavez le riz plusieurs fois, jusqu'à ce que le qui s'en écoule soit bien claire (afin 'en ôter le maximum d'amidon).",
+                "2. Mettez-le dans une casserole, ajoutez l’eau, couvrez et portez à ébullition.",
+                "3. Laissez cuire à couvert pendant 15 minutes puis retirez du feu et laissez en attente à couvert pendant 10 minutes.",
+                "4. Dans un bol, mélangez le vinaigre de riz, le sucre, le sel et le vinaigre de Xérès. Remuez jusqu'à ce que le sucre soit entièrement dissout.",
+                "5. Versez cette préparation sur le riz et mélangez. Laissez refroidir à température ambiante. Pendant ce temps, taillez le filet de saumon en fines lamelles.",
+                "6. Humidifiez vos mains et formez des petits pâtés de riz de forme ovale, de la longueur des lamelles de poisson. Posez une lamelle de saumon sur chaque boulette de riz.",
+                "7. Disposez les sushis dans un plat, recouvrez-les de film alimentaire et réservez au frais jusqu’au moment de servir."
             ]
         }
     ]
