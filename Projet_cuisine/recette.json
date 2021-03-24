@@ -167,6 +167,53 @@
                 "3. Épluchez les pommes et coupez-les quartiers. Placez-les dans un saladier d'eau additionné du jus de citron. Ôtez le gras de la poêle, égouttez les pommes et faites-les revenir dans la poêle 5 min. Retournez-les régulièrement pour qu'elles n'adhérent pas. Réservez au chaud.",
                 "4. Coupez les magrets en tranches, disposez-les dans un plat de service. Déposez les pommes et nappez le tout de sauce au cidre. "
             ]
+        },
+        {
+            "id": "poisson_pane",
+            "nom": "Poisson pané",
+            "categorie": "Plats",
+            "sous categorie": "Poisson",
+            "ingredients":[
+                {
+                    "id": "sel",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id":  "poivre",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id": "poisson",
+                    "quantite": 4,
+                    "dosage": "filets"
+                },
+                {
+                    "id": "oeuf",
+                    "quantite": 4
+                },
+                {
+                    "id": "farine",
+                    "quantite": 8,
+                    "dosage": "cuilléres à soupes"
+                },
+                {
+                    "id": "chapelure",
+                    "quantite": 8,
+                    "dosage": "cuilléres à soupes"
+                },
+                {
+                    "id": "beurre",
+                    "quantite": 2,
+                    "dosage": "noix de beurre"
+                }
+            ],
+            "consignes":[
+                "1. Dans une assiette plate, versez la farine et dans une autre la chapelure. Dans une assiette creuse, battez les œufs pour en faire une omelette.",
+                "2. Salez et poivrez à votre convenance les filets de poisson des deux côtés. Coupez-les en gros morceaux. Farinez-les puis imprégnez-les des deux côtés tour à tour d’œufs battus puis de chapelure.",
+                "3. Faites fondre du beurre dans une poêle et faites frire votre poisson pané jusqu'à ce que la panure soit bien dorée. Servez immédiatement avec par exemple des frites et une salade ! Pensez à proposer un citron coupé en 2, le jus de citron est excellent sur le poisson."
+            ]
         }
     ]
 }
