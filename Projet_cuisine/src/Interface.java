@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
@@ -23,8 +24,9 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	public Interface() {
 		
 		this.setPreferredSize(new Dimension(HauteurFenetre,LargeurFenetre));
-		
+		this.setMinimumSize(new Dimension(HauteurFenetre,LargeurFenetre));
 		this.setLayout(new BorderLayout());
+		this.setBackground(new Color(169,169,169));
 		
 		Categorie panneaudedroite = new Categorie(this);
 		this.add(panneaudedroite, BorderLayout.EAST);
@@ -33,7 +35,7 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		this.add(panneaudegauche , BorderLayout.WEST);
 		
 		this.addWindowListener(this);
-		this.setTitle("Interface du projet");
+		this.setTitle("Projet Cuisine");
 		this.pack();
 		this.setVisible(true);
 	}
