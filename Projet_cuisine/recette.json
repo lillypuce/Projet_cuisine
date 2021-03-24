@@ -322,6 +322,57 @@
                 "6. Enfournez la plaque de four et faites-cuire les toasts au chèvre frais pendant 10 minutes, jusqu’à ce que les fromage soient bien gratinés.",
                 "7. Servez aussitôt les toasts au chèvre frais dans les assiettes pour accompagner une salade verte assaisonnée à l’entrée. Vous pouvez également les servir tel quel à l’apéritif."
             ]
+        },
+        {
+            "id": "tarte_aux_pommes",
+            "nom": "Tarte aux pommes à la crème pâtissière",
+            "categorie": "Dessert",
+            "sous categorie": "Tarte",
+            "ingredients":[
+                {
+                    "id": "pate_brisée",
+                    "quantite": 1
+                },
+                {
+                    "id": "pomme",
+                    "quantite": 500,
+                    "dosage": "g"
+                },
+                {
+                    "id": "gelee_framboise",
+                    "quantite": 2,
+                    "dosage": "cuilléres à soupe"
+
+                },
+                {
+                    "id": "lait",
+                    "quantite": 25,
+                    "dosage": "cl"
+                },
+                {
+                    "id": "farine",
+                    "quantite": 25,
+                    "dosage": "g"
+                },
+                {
+                    "id": "sucre",
+                    "quantite": 60,
+                    "dosage": "g"
+                },
+                {
+                    "id": "oeuf",
+                    "quantite": 1
+                }
+            ],
+            "consignes":[
+                "1. Préchauffez le four à th.7 (200 °C).",
+                "2. Étalez la pâte brisée sur un moule à tarte.",
+                "3. Versez dans une casserole le lait et 30 g de sucre. Chauffez-les en remuant sans cesse. Dans un saladier, mélangez la farine et le reste du sucre. Ajoutez l'œuf et fouettez le mélange.",
+                "4. Ajoutez petit à petit le lait chaud tout en mélangeant. Faites bouillir la crème et remuez-la continuellement avec une cuillère en bois jusqu'à ce qu'elle s'épaississe. Retirez du feu et laissez refroidir. Réservez au frais.",
+                "5. Pelez les pommes, puis épépinez-les avant de les couper en lamelles.",
+                "6. Répartissez la crème pâtissière sur le fond de tarte. Disposez par-dessus les tranches de pommes. Enfournez pendant 25 min.",
+                "7. Versez la gelée de framboise dans une petite casserole et fondez-la avec quelques gouttes d'eau. À l'aide d'un pinceau, enduisez la tarte de gelée de framboise."
+            ]
         }
     ]
 }

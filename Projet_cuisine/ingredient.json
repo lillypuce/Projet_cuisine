@@ -99,7 +99,7 @@
         },
         {
             "id": "pomme",
-            "type": "Pomme golden",
+            "type": "Pomme",
             "recettes":[
             ]
         },
@@ -214,6 +214,18 @@
         {
             "id": "thym",
             "type": "Thym",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "pate_brisée",
+            "type": "Pâte brisée",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "gelee_framboise",
+            "type": "Gelée de framboises",
             "recettes":[
             ]
         }
