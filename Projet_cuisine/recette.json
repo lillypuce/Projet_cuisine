@@ -373,6 +373,37 @@
                 "6. Répartissez la crème pâtissière sur le fond de tarte. Disposez par-dessus les tranches de pommes. Enfournez pendant 25 min.",
                 "7. Versez la gelée de framboise dans une petite casserole et fondez-la avec quelques gouttes d'eau. À l'aide d'un pinceau, enduisez la tarte de gelée de framboise."
             ]
+        },
+        {
+            "id": "creme_aux_speculoos",
+            "nom": "Crème aux spéculoos",
+            "categorie": "Dessert",
+            "sous categorie": "Crème",
+            "ingredients":[
+                {
+                    "id": "speculoos",
+                    "quantite": 8
+                },
+                {
+                    "id": "lait",
+                    "quantite": 500,
+                    "dosage": "ml"
+                },
+                {
+                    "id": "maizena",
+                    "quantite": 2,
+                    "dosage": "cuilléres à café"
+
+                }
+            ],
+            "consignes":[
+                "1. Mixez les biscuits et la Maïzena pour les réduire en poudre.",
+                "2. Dans une casserole, versez le lait et la poudre obtenue et faites chauffer à feu moyen/doux 8 minutes, sans faire bouillir. Remuez sans arrêt en raclant les bords et le fond de la casserole pour éviter que cela attache.",
+                "3. La crème épaissit.",
+                "4. Versez la crème dans les ramequins.",
+                "5. Réservez au frais.",
+                "6. Saupoudrez de spéculoos au moment de servir."
+            ]
         }
     ]
 }
