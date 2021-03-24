@@ -13,8 +13,8 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	public static Toolkit t = Toolkit.getDefaultToolkit();
 	public static Dimension d = t.getScreenSize();
 	
-	public int HauteurFenetre = d.width/2;
-	public int LargeurFenetre = d.height/2;
+	public static int HauteurFenetre = d.width/2;
+	public static int LargeurFenetre = d.height/2;
 	
 	
 	public static void main(String[] args) {
@@ -24,15 +24,17 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	public Interface() {
 		
 		this.setPreferredSize(new Dimension(HauteurFenetre,LargeurFenetre));
-		this.setMinimumSize(new Dimension(HauteurFenetre,LargeurFenetre));
 		this.setLayout(new BorderLayout());
 		this.setBackground(new Color(169,169,169));
 		
 		Categorie panneaudedroite = new Categorie(this);
 		this.add(panneaudedroite, BorderLayout.EAST);
+		panneaudedroite.setBackground(new Color(139,108,66));
 		
 		Liste_recette panneaudegauche = new Liste_recette(this);
 		this.add(panneaudegauche , BorderLayout.WEST);
+		panneaudegauche.setBackground(new Color(139,108,66));
+		
 		
 		this.addWindowListener(this);
 		this.setTitle("Projet Cuisine");
