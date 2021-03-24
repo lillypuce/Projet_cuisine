@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject; 
 import org.json.simple.parser.*; 
 
@@ -45,15 +46,18 @@ public class ListeIngredients {
 		 System.out.println(type);
 		 
 		 //recup recettes(quand on les aura remplit avant)
-		 Map recettes =((Map)jo.get("recettes"));
+		// Map recettes =((Map)jo.get("ingredients"));
 		 
-		 //iterator?
-		 Iterator<Map.Entry> itr1 =recettes.entrySet().iterator();
-		 while(itr1.hasNext()) {
-			 Map.Entry pair = itr1.next();
-			 System.out.println(pair.getKey()+ ":" +pair.getValue());
-		 }
+		 JSONArray ja = (JSONArray) jo.get("ingredients");
+		for (int i=0;i<ja.size();i++) {
+			
+			JSONObject ja2 = (JSONObject)ja.get(i);
+			System.out.println(ja2.get("id"));
+			System.out.println(ja2.get("type"));
+			
+		}
 		 
+ 
 	 
 	 }
 	    }
