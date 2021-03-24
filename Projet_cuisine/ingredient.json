@@ -32,6 +32,12 @@
             ]
         },
         {
+            "id": "colis_de_tomates",
+            "type": "Colis de tomates",
+            "recettes":[
+            ]
+        },
+        {
             "id": "mozzarella",
             "type": "Mozzarella",
             "recettes":[
@@ -42,6 +48,79 @@
             "type": "Feuilles de basilic frais",
             "recettes":[
             ]
+        },
+        {
+            "id": "crevette",
+            "type": "Grosses crevettes",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "fruits_de_mer",
+            "type": "Fruits de mer",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "tomate",
+            "type": "Tomates",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "ail",
+            "type": "Ail",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "vin_blanc",
+            "type": "Vin blanc sec",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "origan",
+            "type": "Origan",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "magret",
+            "type": "Magret de canard",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "pomme",
+            "type": "Pomme golden",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "echalote",
+            "type": "Echalote",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "creme_entiere",
+            "type": "Creme entière",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "beurre",
+            "type": "Beurre",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "citron",
+            "type": "Citron",
+            "recettes":[
+            ]
         }
+        
     ]
 }
