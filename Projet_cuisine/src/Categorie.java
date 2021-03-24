@@ -11,6 +11,7 @@ public class Categorie extends Panel {
 		header = new Panel();
 		header.setBackground(Color.GRAY);
 		
+		this.add(header);
 		
 	}
 
