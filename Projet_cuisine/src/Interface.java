@@ -26,7 +26,7 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		
 		this.setLayout(new BorderLayout());
 		
-		Categorie panneaudedroite = new Categorie();
+		Categorie panneaudedroite = new Categorie(this);
 		this.add(panneaudedroite, BorderLayout.EAST);
 		
 		Liste_recette panneaudegauche = new Liste_recette(this);
