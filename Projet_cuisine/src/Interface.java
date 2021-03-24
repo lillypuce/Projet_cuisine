@@ -26,10 +26,7 @@ public class Interface extends Frame implements WindowListener{
 		
 		Categorie panneaudedroite = new Categorie();
 		this.add(panneaudedroite, BorderLayout.EAST);
-		
-		Recette panneaucentral = new Recette();
-		this.add(panneaucentral, BorderLayout.CENTER);
-		
+		//test
 		this.addWindowListener(this);
 		this.setTitle("Interface du projet");
 		this.pack();

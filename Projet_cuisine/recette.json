@@ -8,8 +8,40 @@
             "ingredients":[
                 {
                     "id": "sel",
-                    "quantite": 1
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id":  "poivre",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id": "pate_à_pizza",
+                    "quantite": 400,
+                    "dosage": "g"
+                },
+                {
+                    "id": "purée_de_tomates",
+                    "quantite": 6,
+                    "dosage": "cuillérées"
+                },
+                {
+                    "id": "mozzarella",
+                    "quantite": 250,
+                    "dosage": "g"
+                },
+                {
+                    "id": "basilic",
+                    "quantite": 4,
+                    "dosage": "feuille"
+                },
+                {
+                    "id": "huile_olive",
+                    "quantite": 5,
+                    "dosage": "cuilléres à soupe"
                 }
+
             ],
             "consignes":[
                 "1. Préchauffez le four Th8 (240°C).",
@@ -19,6 +51,168 @@
                 "5. Etalez la purée de tomates sur la pizza et mettez-la dans le four préchauffé Th8 (240°C) pendant 10 min.",
                 "6. Sortez la pizza du four, étalez les dés de mozzarella et enfournez-la de nouveau pendant 10 min environ.",
                 "7.Sortez la pizza du four, assaisonnez-la avec l’huile restante et les feuilles de basilic."
+            ]
+        },
+        {
+            "id": "oceane",
+            "nom": "Océane",
+            "categorie": "Plats",
+            "sous categorie": "Pizza",
+            "ingredients":[
+                {
+                    "id": "sel",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id":  "poivre",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id": "crevette",
+                    "quantite": 8,
+                    "dosage": "grosses crevettes"
+                },
+                {
+                    "id": "fruits_de_mer",
+                    "quantite": 300,
+                    "dosage": "cuillérées"
+                },
+                {
+                    "id": "colis_de_tomates",
+                    "quantite": 100,
+                    "dosage": "g"
+                },
+                {
+                    "id": "tomate",
+                    "quantite": 4,
+                    "dosage": "fines rondelles"
+                },
+                {
+                    "id": "ail",
+                    "quantite": 3,
+                    "dosage": "gousses d'ail émincées"
+                },
+                {
+                    "id": "huile_olive",
+                    "quantite": 2,
+                    "dosage": "cuilléres à café"
+                },
+                {
+                    "id": "vin_blanc",
+                    "quantite": 4,
+                    "dosage": "cuilléres à soupe"
+                },
+                {
+                    "id": "origan",
+                    "quantite": 1,
+                    "dosage": "g"
+                }
+
+            ],
+            "consignes":[
+                "1. Préchauffez le four Th6.",
+                "2. Déroulez la pâte sur la feuille de cuisson. Piquez-la avec une fourchette. Faites la pré-cuire 5 min au four préalablement chauffé.",
+                "3. Faites chauffer 1 cuillère à café d'huile dans une sauteuse anti-adhésive.Faites-y cuire les crevettes surgelées 4 min de chaque côté et décortiquez-les. Ajoutez les gousses d’ail émincées et les fruits de mer surgelés et faites cuire 1 min encore le tout. Versez le vin blanc et poursuivez la cuisson 2 min.",
+                "4. Étalez le coulis de tomate puis les tranches de tomates sur la pizza. Salez et poivrez. Répartissez les fruits de mer. Disposez les crevettes décortiquées, saupoudrez d’origan et nappez d’une cuillère à café d’huile. Passez sous le grill 10 min."
+            ]
+        },
+        {
+            "id": "magret",
+            "nom": "Magret de canard aux pommes et au cidre",
+            "categorie": "Plats",
+            "sous categorie": "Pizza",
+            "ingredients":[
+                {
+                    "id": "sel",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id":  "poivre",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id": "magret",
+                    "quantite": 2
+                },
+                {
+                    "id": "pomme",
+                    "quantite": 3
+                },
+                {
+                    "id": "echalote",
+                    "quantite": 1
+                },
+                {
+                    "id": "creme_entiere",
+                    "quantite": 25,
+                    "dosage": "cl"
+                },
+                {
+                    "id": "beurre",
+                    "quantite": 15,
+                    "dosage": "g noix de beurre"
+                },
+                {
+                    "id": "citron",
+                    "quantite": 1
+                }
+            ],
+            "consignes":[
+                "1. Débutons par la sauce. Émincez l’échalote et faites-la revenir dans une casserole avec le beurre. Versez le cidre et laissez réduire pendant 10 min à feu moyen. Incorporez la crème et assaisonnez à votre goût. Laissez réduire à nouveau pendant 10 min. Vous devez obtenir un mélange homogène. Réservez au chaud.",
+                "2. Pendant ce temps, fendez la chair des magrets de canard en diagonale. Dans une poêle anti-adhésive, faites chauffer côté peau sans ajouter de matière grasse. Laissez dorer pendant 5 min. Couvrez et continuez la cuisson à feu doux 10 min supplémentaires. 1 min avant la fin de la cuisson, retournez-les côté chair. Réservez.",
+                "3. Épluchez les pommes et coupez-les quartiers. Placez-les dans un saladier d'eau additionné du jus de citron. Ôtez le gras de la poêle, égouttez les pommes et faites-les revenir dans la poêle 5 min. Retournez-les régulièrement pour qu'elles n'adhérent pas. Réservez au chaud.",
+                "4. Coupez les magrets en tranches, disposez-les dans un plat de service. Déposez les pommes et nappez le tout de sauce au cidre. "
+            ]
+        },
+        {
+            "id": "poisson_pane",
+            "nom": "Poisson pané",
+            "categorie": "Plats",
+            "sous categorie": "Poisson",
+            "ingredients":[
+                {
+                    "id": "sel",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id":  "poivre",
+                    "quantite": 1,
+                    "dosage": "g"
+                },
+                {
+                    "id": "poisson",
+                    "quantite": 4,
+                    "dosage": "filets"
+                },
+                {
+                    "id": "oeuf",
+                    "quantite": 4
+                },
+                {
+                    "id": "farine",
+                    "quantite": 8,
+                    "dosage": "cuilléres à soupes"
+                },
+                {
+                    "id": "chapelure",
+                    "quantite": 8,
+                    "dosage": "cuilléres à soupes"
+                },
+                {
+                    "id": "beurre",
+                    "quantite": 2,
+                    "dosage": "noix de beurre"
+                }
+            ],
+            "consignes":[
+                "1. Dans une assiette plate, versez la farine et dans une autre la chapelure. Dans une assiette creuse, battez les œufs pour en faire une omelette.",
+                "2. Salez et poivrez à votre convenance les filets de poisson des deux côtés. Coupez-les en gros morceaux. Farinez-les puis imprégnez-les des deux côtés tour à tour d’œufs battus puis de chapelure.",
+                "3. Faites fondre du beurre dans une poêle et faites frire votre poisson pané jusqu'à ce que la panure soit bien dorée. Servez immédiatement avec par exemple des frites et une salade ! Pensez à proposer un citron coupé en 2, le jus de citron est excellent sur le poisson."
             ]
         }
     ]

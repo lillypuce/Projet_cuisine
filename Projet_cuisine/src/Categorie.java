@@ -1,17 +1,17 @@
-import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Panel;
 import java.awt.Toolkit;
 
-public class Categorie extends Canvas {
-
-	public static Toolkit t = Toolkit.getDefaultToolkit();
-	public static Dimension d = t.getScreenSize();
+public class Categorie extends Panel {
 	
-	public int HauteurFenetre = d.width/2;
-	public int LargeurFenetre = d.height/2;
+	Panel header;
 	
 	public Categorie() {
+		header = new Panel();
+		header.setBackground(Color.GRAY);
 		
+		this.add(header);
 		
 	}
 
