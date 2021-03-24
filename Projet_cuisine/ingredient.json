@@ -120,7 +120,32 @@
             "type": "Citron",
             "recettes":[
             ]
+        },
+        {
+            "id": "poisson",
+            "type": "Poisson",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "oeuf",
+            "type": "Oeuf",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "farine",
+            "type": "Farine",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "chapelure",
+            "type": "Chapelure",
+            "recettes":[
+            ]
         }
+
         
     ]
 }
