@@ -2,10 +2,12 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-public class Interface extends Frame implements WindowListener{
+public class Interface extends Frame implements WindowListener, ItemListener{
 	
 	public static Toolkit t = Toolkit.getDefaultToolkit();
 	public static Dimension d = t.getScreenSize();
@@ -26,7 +28,10 @@ public class Interface extends Frame implements WindowListener{
 		
 		Categorie panneaudedroite = new Categorie();
 		this.add(panneaudedroite, BorderLayout.EAST);
-		//test
+		
+		Liste_recette panneaudegauche = new Liste_recette(this);
+		this.add(panneaudegauche , BorderLayout.WEST);
+		
 		this.addWindowListener(this);
 		this.setTitle("Interface du projet");
 		this.pack();
@@ -75,5 +80,9 @@ public class Interface extends Frame implements WindowListener{
 		
 	}
 
+	@Override
+	public void itemStateChanged(ItemEvent arg0) {
+		// TODO Auto-generated method stub
 		
+	}	
 }
