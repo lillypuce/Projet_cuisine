@@ -7,7 +7,7 @@ import java.awt.event.ItemListener;
 
 public class Categorie extends Panel {
 	
-	public static String[] categ = {"Entree","Plats","Dessert", "Boisson"};
+	public static String[] categ = {"Entrees","Plats","Desserts", "Boissons"};
 	
 	public Categorie(ItemListener l) {
 		
