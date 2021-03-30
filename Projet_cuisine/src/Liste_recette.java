@@ -14,14 +14,16 @@ public class Liste_recette extends Panel{
 	String id,nom, categorie, souscategorie;
 	String[] ingredient;
 	
-	
-	public static String[] recette = {"Margherita", "Oceane", "Magret"};
+	public static String[] entrees = {"salade", "nem", "tartare"};
+	public static String[] plats = {"Margherita", "Oceane", "Magret"};
+	public static String[] desserts = {"yaourt", "flan", "ananas"};
+	public static String[] boissons = {"coca", "soda", "pepsi"};
 	
 	public Liste_recette(ItemListener l) {
 		
 		List lst_recette = new List(29);
-		for (int i=0; i<recette.length; i++) {
-			lst_recette.add(Liste_recette.recette[i]);
+		for (int i=0; i<plats.length; i++) {
+			lst_recette.add(Liste_recette.plats[i]);
 		}
 		this.add(lst_recette);
 		lst_recette.addItemListener(l);
