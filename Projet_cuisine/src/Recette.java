@@ -67,9 +67,16 @@ public class Recette extends Panel{
 			l.consignes = (ArrayList<String>)consigne;
 			
 			dicoRecettes.put(id, l);
+			
+			for(int j=0;j<ingredient.size();j++) {
+				JSONObject ing = (JSONObject)ingredient.get(j);
+				
+				String id_ingredient = (String) ing.get("id");
+				System.out.println(nom +" "+ id_ingredient);
+			}
 		
 		}
-		System.out.println(dicoRecettes);
+		//System.out.println(dicoRecettes);
 		
 		
 		
