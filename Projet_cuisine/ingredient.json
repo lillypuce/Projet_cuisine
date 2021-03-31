@@ -4,6 +4,7 @@
             "id": "sel",
             "type": "Sel",
             "recettes":[
+                "pain", "pizza", "pates"
             ]
         },
         {
@@ -106,7 +107,8 @@
         {
             "id": "echalote",
             "type": "Echalote",
-            "recettes":["id":  "poivre",
+            "recettes":[
+            ]
         },
         {
             "id": "vinaigre_riz",
