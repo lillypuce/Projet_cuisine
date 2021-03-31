@@ -40,7 +40,7 @@ public class Liste_recette extends Panel{
 		this.ingredient=in;
 	}
 	public static void main(String[] args)throws Exception  {
-		//Récupération fichier recette.json
+		//Rï¿½cupï¿½ration fichier recette.json
 		
 		Object obj = new JSONParser().parse(new FileReader("recette.json"));
 		JSONObject jo =(JSONObject) obj;
@@ -61,12 +61,18 @@ public class Liste_recette extends Panel{
 			
 			Liste_recette l = new Liste_recette(id,nom,categorie,souscategorie);
 			//recette.put(l, ingredient);
-			
+			//System.out.println(id);
+			//System.out.println(nom);
+			//System.out.println(categorie);
+			//System.out.println(souscategorie);
 			System.out.println(l);
 		
 		}
 		
 		
 		
+	}
+	public String toString() {
+		return this.id + " "+this.nom+" "+this.categorie+" "+this.souscategorie;
 	}
 }
