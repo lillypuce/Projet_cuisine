@@ -1,7 +1,9 @@
 import java.awt.List;
 import java.awt.Panel;
 import java.awt.event.ItemListener;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -10,6 +12,7 @@ import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class Recette extends Panel{
 	
@@ -41,47 +44,8 @@ public class Recette extends Panel{
 		this.consignes = new ArrayList<>();
 	}
 
-	public static void main(String[] args)throws Exception  {
-		Object obj = new JSONParser().parse(new FileReader("recette.json"));
-		JSONObject jo =(JSONObject) obj;
-		
-		JSONArray ja = (JSONArray) jo.get("recettes");
-		
-		Map<String,Recette> dicoRecettes = new HashMap<String,Recette>();
-		
-
-		for (int i=0;i<ja.size();i++) {
-			JSONObject ja2 = (JSONObject)ja.get(i);
-			
-			JSONArray ingredient = (JSONArray) ja2.get("ingredients");
-			JSONArray consigne = (JSONArray) ja2.get("consignes");
-			
-			String id = (String) ja2.get("id");
-			String nom = (String) ja2.get("nom");
-			String categorie = (String) ja2.get("categorie");
-			String souscategorie = (String) ja2.get("sous categorie");
-			
-			Recette l = new Recette(id,nom,categorie,souscategorie);
-			
-			l.ingredients = (ArrayList<String>)ingredient;
-			l.consignes = (ArrayList<String>)consigne;
-			
-			dicoRecettes.put(id, l);
-			
-			for(int j=0;j<ingredient.size();j++) {
-				JSONObject ing = (JSONObject)ingredient.get(j);
-				
-				String id_ingredient = (String) ing.get("id");
-				System.out.println(nom +" "+ id_ingredient);
-			}
-		
-		}
-		//System.out.println(dicoRecettes);
-		
-		
-		
-	}
 	public String toString() {
 		return this.id + " "+this.nom+" "+this.categorie+" "+this.souscategorie;
 	}
+	
 }

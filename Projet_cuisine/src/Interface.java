@@ -7,6 +7,10 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.json.simple.parser.ParseException;
 
 public class Interface extends Frame implements WindowListener, ItemListener{
 	
@@ -17,7 +21,10 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	public static int LargeurFenetre = d.height/2;
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+		
+		Modele m = new Modele(); 
+		
 		new Interface();
 	}
 	
