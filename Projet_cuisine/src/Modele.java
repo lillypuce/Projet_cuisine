@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Observable;
 
@@ -17,6 +18,7 @@ import org.json.simple.parser.ParseException;
 public class Modele  extends Observable{
 
 	public ArrayList<ImagesModele> images;
+	//public Map<String,String> Ing_Recettes;
 	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
@@ -26,6 +28,10 @@ public class Modele  extends Observable{
 
 		Map<String,Recette> dicoRecettes = new HashMap<String,Recette>();
 
+		//this.Ing_Recettes = new LinkedHashMap<String,String>();
+		
+		
+		
 		for (int i=0;i<ja_recette.size();i++) {
 			JSONObject ja2 = (JSONObject)ja_recette.get(i);
 
@@ -48,9 +54,12 @@ public class Modele  extends Observable{
 				JSONObject ing = (JSONObject)ingredient.get(j);
 
 				String id_ingredient = (String) ing.get("id");
-				//System.out.println(nom +" "+ id_ingredient);
+				
+				
+				
+				//System.out.println(nom + " " +id_ingredient);
+				//Ing_Recettes.put(nom,id_ingredient);
 			}
-
 		}
 		
 		Object obj_ingredient = new JSONParser().parse(new FileReader("ingredient.json"));
@@ -72,7 +81,27 @@ public class Modele  extends Observable{
 			l.recettes = (ArrayList<String>)recettes;
 			dicoIngredients.put(id, l);
 		}
-		System.out.println(dicoIngredients);
+		
+		for(int i=0;i<ja_ingredient.size();i++) {
+			for(int j=0;j<ja_recette.size();j++) {
+				JSONObject ja2_ingredient = (JSONObject)ja_ingredient.get(i);
+				JSONObject ja2_recette = (JSONObject)ja_recette.get(i);
+				
+				String id_ingredient = (String) ja2_ingredient.get("id");
+				String id_recette = (String) ja2_recette.get("id");
+				
+				JSONArray ingredient = (JSONArray) ja2_recette.get("ingredients");
+				
+				for(int k=0;k<ingredient.size();k++) {
+					JSONObject ing = (JSONObject)ingredient.get(j);
+					String id = (String) ing.get("id");
+					if(id == id_ingredient) {
+						System.out.println(id_recette + " " + id_ingredient + " " + id);
+					}
+				}
+				
+			}
+		}
 	}
 	
 
