@@ -17,8 +17,8 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	public static Toolkit t = Toolkit.getDefaultToolkit();
 	public static Dimension d = t.getScreenSize();
 	
-	public static int HauteurFenetre = d.width/2;
-	public static int LargeurFenetre = d.height/2;
+	public static int HauteurFenetre = d.width-300;
+	public static int LargeurFenetre = d.height-220;
 	
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
