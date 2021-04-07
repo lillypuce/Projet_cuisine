@@ -31,6 +31,8 @@ public class Modele  extends Observable{
 		//this.Ing_Recettes = new LinkedHashMap<String,String>();
 		
 		
+		
+		//REMPLISSAGE DU DICTIONNAIRE POUR LES RECETTES
 		for (int i=0;i<ja_recette.size();i++) {
 			JSONObject ja2 = (JSONObject)ja_recette.get(i);
 
@@ -54,13 +56,12 @@ public class Modele  extends Observable{
 
 				String id_ingredient = (String) ing.get("id");
 				
-				
-				
-				//System.out.println(nom + " " +id_ingredient);
-				//Ing_Recettes.put(nom,id_ingredient);
 			}
 		}
+		System.out.println(dicoRecettes);
 		
+		
+		//REMPLISSAGE DU DICO POUR LES INGREDIENTS
 		Object obj_ingredient = new JSONParser().parse(new FileReader("ingredient.json"));
 		JSONObject jo_ingredient = (JSONObject) obj_ingredient; 
 		
@@ -81,6 +82,8 @@ public class Modele  extends Observable{
 			dicoIngredients.put(id, l);
 		}
 		
+		
+		//LIAGE DES RECETTES ET DES INGREDIENTS + REMPLISSAGE DU TABLEAU DES RECETTES POUR CHAQUE INGREDIENT
 		for(int i=0;i<ja_ingredient.size();i++) {
 			for(int j=0;j<ja_recette.size();j++) {
 				JSONObject ja2_ingredient = (JSONObject)ja_ingredient.get(i);
@@ -94,8 +97,8 @@ public class Modele  extends Observable{
 				for(int k=0;k<ingredient.size();k++) {
 					JSONObject ing = (JSONObject)ingredient.get(k);
 					String id = (String) ing.get("id");
-					if(id == id_ingredient) {
-						System.out.println(id_recette + " " + id_ingredient + " " + id);
+					if(id.compareTo(id_ingredient) == 0) {
+						System.out.println("ok");
 					}
 				}
 				
