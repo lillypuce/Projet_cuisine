@@ -22,13 +22,12 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
-		
-		Modele m = new Modele(); 
-		
 		new Interface();
 	}
 	
-	public Interface() {
+	public Interface() throws FileNotFoundException, IOException, ParseException {
+		
+		Modele m = new Modele();
 		
 		this.setPreferredSize(new Dimension(HauteurFenetre,LargeurFenetre));
 		this.setLayout(new BorderLayout());
@@ -38,7 +37,7 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		this.add(panneaudedroite, BorderLayout.EAST);
 		panneaudedroite.setBackground(new Color(139,108,66));
 		
-		Recette panneaudegauche = new Recette(this);
+		ListeRecettes panneaudegauche = new ListeRecettes(this,m);
 		this.add(panneaudegauche , BorderLayout.WEST);
 		panneaudegauche.setBackground(new Color(139,108,66));
 		
