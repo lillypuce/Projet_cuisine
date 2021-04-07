@@ -18,7 +18,8 @@ import org.json.simple.parser.ParseException;
 public class Modele  extends Observable{
 
 	public ArrayList<ImagesModele> images;
-	//public Map<String,String> Ing_Recettes;
+	
+	public Map<String,ArrayList<String>> Ing_Recettes;
 	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
@@ -28,7 +29,7 @@ public class Modele  extends Observable{
 
 		Map<String,Recette> dicoRecettes = new HashMap<String,Recette>();
 
-		//this.Ing_Recettes = new LinkedHashMap<String,String>();
+		this.Ing_Recettes = new HashMap<String,ArrayList<String>>();
 		
 		
 		
@@ -58,7 +59,6 @@ public class Modele  extends Observable{
 				
 			}
 		}
-		System.out.println(dicoRecettes);
 		
 		
 		//REMPLISSAGE DU DICO POUR LES INGREDIENTS
@@ -83,7 +83,7 @@ public class Modele  extends Observable{
 		}
 		
 		
-		//LIAGE DES RECETTES ET DES INGREDIENTS + REMPLISSAGE DU TABLEAU DES RECETTES POUR CHAQUE INGREDIENT
+		//LIAGE DES RECETTES ET DES INGREDIENTS DANS UN DICO
 		for(int i=0;i<ja_ingredient.size();i++) {
 			for(int j=0;j<ja_recette.size();j++) {
 				JSONObject ja2_ingredient = (JSONObject)ja_ingredient.get(i);
@@ -98,12 +98,23 @@ public class Modele  extends Observable{
 					JSONObject ing = (JSONObject)ingredient.get(k);
 					String id = (String) ing.get("id");
 					if(id.compareTo(id_ingredient) == 0) {
-						System.out.println("ok");
+						
+						//Ajout dans le dictionnaire
+						if(Ing_Recettes.containsKey(id_ingredient)) {
+							Ing_Recettes.get(id_ingredient).add(id_recette);
+						}
+						else {
+							ArrayList<String> r = new ArrayList<String>();
+							r.add(id_recette);
+							Ing_Recettes.put(id_ingredient, r);
+						}
 					}
 				}
 				
 			}
 		}
+		
+		System.out.println(Ing_Recettes);
 	}
 	
 	public Modele(String dir){
