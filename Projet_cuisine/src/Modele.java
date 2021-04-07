@@ -31,7 +31,6 @@ public class Modele  extends Observable{
 		//this.Ing_Recettes = new LinkedHashMap<String,String>();
 		
 		
-		
 		for (int i=0;i<ja_recette.size();i++) {
 			JSONObject ja2 = (JSONObject)ja_recette.get(i);
 
@@ -85,7 +84,7 @@ public class Modele  extends Observable{
 		for(int i=0;i<ja_ingredient.size();i++) {
 			for(int j=0;j<ja_recette.size();j++) {
 				JSONObject ja2_ingredient = (JSONObject)ja_ingredient.get(i);
-				JSONObject ja2_recette = (JSONObject)ja_recette.get(i);
+				JSONObject ja2_recette = (JSONObject)ja_recette.get(j);
 				
 				String id_ingredient = (String) ja2_ingredient.get("id");
 				String id_recette = (String) ja2_recette.get("id");
@@ -93,7 +92,7 @@ public class Modele  extends Observable{
 				JSONArray ingredient = (JSONArray) ja2_recette.get("ingredients");
 				
 				for(int k=0;k<ingredient.size();k++) {
-					JSONObject ing = (JSONObject)ingredient.get(j);
+					JSONObject ing = (JSONObject)ingredient.get(k);
 					String id = (String) ing.get("id");
 					if(id == id_ingredient) {
 						System.out.println(id_recette + " " + id_ingredient + " " + id);
@@ -104,7 +103,6 @@ public class Modele  extends Observable{
 		}
 	}
 	
-
 	public Modele(String dir){
 
 		File repImages = new File(dir);
