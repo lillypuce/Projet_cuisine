@@ -21,6 +21,7 @@ public class Modele  extends Observable{
 	public ArrayList<ImagesModele> images;
 	
 	public Map<String,ArrayList<String>> Ing_Recettes;
+	public HashMap<String, RecetteModele> dicoRecettes;
 	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
@@ -28,7 +29,7 @@ public class Modele  extends Observable{
 
 		JSONArray ja_recette = (JSONArray) jo_recette.get("recettes");
 
-		Map<String,Recette> dicoRecettes = new HashMap<String,Recette>();
+		this.dicoRecettes = new HashMap<String,RecetteModele>();
 
 		this.Ing_Recettes = new HashMap<String,ArrayList<String>>();
 		
@@ -46,7 +47,7 @@ public class Modele  extends Observable{
 			String categorie = (String) ja2.get("categorie");
 			String souscategorie = (String) ja2.get("sous categorie");
 
-			Recette l = new Recette(id,nom,categorie,souscategorie);
+			RecetteModele l = new RecetteModele(id,nom,categorie,souscategorie);
 
 			l.ingredients = (ArrayList<String>)ingredient;
 			l.consignes = (ArrayList<String>)consigne;
