@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -114,7 +115,32 @@ public class Modele  extends Observable{
 			}
 		}
 		
-		System.out.println(Ing_Recettes);
+		//System.out.println(Ing_Recettes);
+		
+		//ECRITURE DANS LE FICHIER .JSON
+		for(int i=0;i<ja_ingredient.size();i++) {
+			JSONObject ja2_ingredient = (JSONObject)ja_ingredient.get(i);
+			String id_ingredient = (String) ja2_ingredient.get("id");
+			ArrayList<String> a = Ing_Recettes.get(id_ingredient);
+			JSONArray rec = (JSONArray) ja2_ingredient.get("recettes");
+			//System.out.println(id_ingredient + " => " +a);
+			
+			//JSONObject jsonObj = (JSONObject)rec.get(i);
+			
+			System.out.println(a);
+			
+			//PERMET D'ECRIRE MAIS SUPPRIME TOUT
+			
+			//try (FileWriter file = new FileWriter("ingredient.json")) {
+	            //We can write any JSONArray or JSONObject instance to the file
+	        //    file.write(rec.toJSONString(a)); 
+	        //    file.flush();
+	 
+	        //} catch (IOException e) {
+	        //    e.printStackTrace();
+	        //}
+			
+		}	
 	}
 	
 	public Modele(String dir){
