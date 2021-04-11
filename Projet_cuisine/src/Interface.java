@@ -18,7 +18,7 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	public static Dimension d = t.getScreenSize();
 	
 	public static int HauteurFenetre = d.width-300;
-	public static int LargeurFenetre = d.height-220;
+	public static int LargeurFenetre = d.height-120;
 	
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
@@ -28,6 +28,8 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	public Interface() throws FileNotFoundException, IOException, ParseException {
 		
 		Modele m = new Modele();
+		Ajouter_recette ar = new Ajouter_recette();
+		Recherche_recette rr = new Recherche_recette();
 		
 		this.setPreferredSize(new Dimension(HauteurFenetre,LargeurFenetre));
 		this.setLayout(new BorderLayout());
@@ -38,12 +40,15 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		panneaudedroite.setBackground(new Color(139,108,66));
 		
 		ListeRecettes panneaudegauche = new ListeRecettes(this,m);
-		this.add(panneaudegauche , BorderLayout.WEST);
+		this.add(panneaudegauche, BorderLayout.WEST);
 		panneaudegauche.setBackground(new Color(139,108,66));
 		
-		Note_recette panneaudebas = new Note_recette(this);
-		this.add(panneaudebas , BorderLayout.SOUTH);
+		Note_recette panneaudebas = new Note_recette(this, ar, rr);
+		this.add(panneaudebas, BorderLayout.SOUTH);
 		panneaudebas.setBackground(new Color(139,108,66));
+		
+		Fond_Image panneaudehaut = new Fond_Image();
+		this.add(panneaudehaut, BorderLayout.NORTH);
 		
 		this.addWindowListener(this);
 		this.setTitle("Projet Cuisine");
