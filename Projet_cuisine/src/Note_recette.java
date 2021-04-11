@@ -8,14 +8,16 @@ public class Note_recette extends Panel{
 	
 	Checkbox[] etoiles = new Checkbox[5];
 	
-	public static String[] libelles = {"1 etoile", "2 etoiles", "3 etoiles", "4 etoiles", "5 etoiles"};
+	public static String[] libelles = {"1 etoile", "2 etoiles", "3 etoiles", "4 etoiles"};
 	
-	public Note_recette(ItemListener l) {
+	public Note_recette(ItemListener l, Ajouter_recette ar, Recherche_recette rr) {
 		
 		this.setLayout(new FlowLayout());
+		this.add(rr);
+		this.add(ar);
 		
 		CheckboxGroup cg=new CheckboxGroup();
-		for (int i=0; i<5; i++) {
+		for (int i=0; i<4; i++) {
 			this.etoiles[i] = new Checkbox(libelles[i], false, cg);
 			this.etoiles[i].addItemListener(l);
 			this.add(this.etoiles[i]);
