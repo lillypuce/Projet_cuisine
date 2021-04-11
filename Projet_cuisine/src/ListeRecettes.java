@@ -16,7 +16,6 @@ public class ListeRecettes extends Panel{
 		}
 		
 		this.add(plats);
-		plats.addItemListener(l);
-		
+		plats.addItemListener(l);		
 	}
 }
