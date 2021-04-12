@@ -35,7 +35,7 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		this.setLayout(new BorderLayout());
 		this.setBackground(new Color(169,169,169));
 		
-		Categorie panneaudedroite = new Categorie(this);
+		Categorie panneaudedroite = new Categorie(this, m);
 		this.add(panneaudedroite, BorderLayout.EAST);
 		panneaudedroite.setBackground(new Color(139,108,66));
 		
