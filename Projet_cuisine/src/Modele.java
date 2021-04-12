@@ -158,5 +158,14 @@ public class Modele  extends Observable{
 		this.setChanged();
 		this.notifyObservers(Categorie.lst_categorie.getItem(this.categorie_selectionnee));
 	}
+	
+	public void changeNote(int nouvelleNote) {
+		this.images.get(this.categorie_selectionnee).note=nouvelleNote;
+		this.setChanged();
+		this.notifyObservers(this.images.get(this.categorie_selectionnee));
+
+	}
+
+
 
 }
