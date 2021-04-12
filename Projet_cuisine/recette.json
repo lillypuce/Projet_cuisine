@@ -120,7 +120,7 @@
         },
         {
             "id": "magret",
-            "nom": "Magret de canard aux pommes et au cidre",
+            "nom": "Magret de canard",
             "categorie": "Plats",
             "sous categorie": "Pizza",
             "ingredients":[
@@ -325,7 +325,7 @@
         },
         {
             "id": "tarte_aux_pommes",
-            "nom": "Tarte aux pommes à la crème pâtissière",
+            "nom": "Tarte aux pommes",
             "categorie": "Dessert",
             "sous categorie": "Tarte",
             "ingredients":[
