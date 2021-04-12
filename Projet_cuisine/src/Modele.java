@@ -23,6 +23,8 @@ public class Modele  extends Observable{
 	public Map<String,ArrayList<String>> Ing_Recettes;
 	public HashMap<String, RecetteModele> dicoRecettes;
 	
+	int categorie_selectionnee = 0;
+	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
 		JSONObject jo_recette =(JSONObject) obj_recette;
@@ -32,8 +34,6 @@ public class Modele  extends Observable{
 		this.dicoRecettes = new HashMap<String,RecetteModele>();
 
 		this.Ing_Recettes = new HashMap<String,ArrayList<String>>();
-		
-		
 		
 		//REMPLISSAGE DU DICTIONNAIRE POUR LES RECETTES
 		for (int i=0;i<ja_recette.size();i++) {
@@ -57,11 +57,9 @@ public class Modele  extends Observable{
 			for(int j=0;j<ingredient.size();j++) {
 				JSONObject ing = (JSONObject)ingredient.get(j);
 
-				String id_ingredient = (String) ing.get("id");
-				
+				String id_ingredient = (String) ing.get("id");	
 			}
 		}
-		
 		
 		//REMPLISSAGE DU DICO POUR LES INGREDIENTS
 		Object obj_ingredient = new JSONParser().parse(new FileReader("ingredient.json"));
@@ -83,7 +81,6 @@ public class Modele  extends Observable{
 			l.recettes = (ArrayList<String>)recettes;
 			dicoIngredients.put(id, l);
 		}
-		
 		
 		//LIAGE DES RECETTES ET DES INGREDIENTS DANS UN DICO
 		for(int i=0;i<ja_ingredient.size();i++) {
@@ -128,7 +125,7 @@ public class Modele  extends Observable{
 			
 			//JSONObject jsonObj = (JSONObject)rec.get(i);
 			
-			System.out.println(a);
+			//System.out.println(a);
 			
 			//PERMET D'ECRIRE MAIS SUPPRIME TOUT
 			
@@ -156,5 +153,10 @@ public class Modele  extends Observable{
 
 	}
 
+	public void select_categ(Integer item) {
+		this.categorie_selectionnee = item;
+		this.setChanged();
+		this.notifyObservers(this.images.get(this.categorie_selectionnee));
+	}
 
 }
