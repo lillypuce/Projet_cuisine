@@ -52,6 +52,10 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		Fond_Image panneaudehaut = new Fond_Image();
 		this.add(panneaudehaut, BorderLayout.NORTH);
 		
+		Affichage_recette panneaucentral = new Affichage_recette(this, m);
+		this.add(panneaucentral, BorderLayout.CENTER);
+		panneaucentral.setBackground(new Color(139,108,66));
+		
 		this.addWindowListener(this);
 		this.setTitle("Projet Cuisine");
 		this.pack();
