@@ -148,7 +148,7 @@ public class Modele  extends Observable{
 		this.images = new ArrayList<>();
 		for (File file : imagesListe) {
 			String nomImage = file.getName().split("\\.")[0];
-			this.images.add(new ImagesModele(nomImage, "images/"+file.getName()));
+			this.images.add(new ImagesModele(nomImage, "images/"+file.getName(),0));
 		}
 
 	}
@@ -157,6 +157,13 @@ public class Modele  extends Observable{
 		this.categorie_selectionnee = item;
 		this.setChanged();
 		this.notifyObservers(this.images.get(this.categorie_selectionnee));
+	}
+	
+	public void changeNote(int nouvelleNote) {
+		this.images.get(this.categorie_selectionnee).note=nouvelleNote;
+		this.setChanged();
+		this.notifyObservers(this.images.get(this.categorie_selectionnee));
+		
 	}
 
 }
