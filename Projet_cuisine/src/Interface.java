@@ -28,18 +28,20 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	public Interface() throws FileNotFoundException, IOException, ParseException {
 		
 		Modele m = new Modele();
+		Controleur ctrl = new Controleur(m);
 		Ajouter_recette ar = new Ajouter_recette();
 		Recherche_recette rr = new Recherche_recette();
+		Categorie c = new Categorie(this,m);
 		
 		this.setPreferredSize(new Dimension(HauteurFenetre,LargeurFenetre));
 		this.setLayout(new BorderLayout());
 		this.setBackground(new Color(169,169,169));
 		
-		Categorie panneaudedroite = new Categorie(this, m);
+		Categorie panneaudedroite = new Categorie(ctrl, m);
 		this.add(panneaudedroite, BorderLayout.EAST);
 		panneaudedroite.setBackground(new Color(139,108,66));
 		
-		ListeRecettes panneaudegauche = new ListeRecettes(this,m);
+		ListeRecettes panneaudegauche = new ListeRecettes(this,m,c);
 		this.add(panneaudegauche, BorderLayout.WEST);
 		panneaudegauche.setBackground(new Color(139,108,66));
 		
