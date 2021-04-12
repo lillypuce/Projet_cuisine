@@ -23,7 +23,7 @@ public class Modele  extends Observable{
 	public Map<String,ArrayList<String>> Ing_Recettes;
 	public HashMap<String, RecetteModele> dicoRecettes;
 	
-	int categorie_selectionnee = 0;
+	public static int categorie_selectionnee = 0;
 	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
@@ -156,14 +156,7 @@ public class Modele  extends Observable{
 	public void select_categ(Integer item) {
 		this.categorie_selectionnee = item;
 		this.setChanged();
-		this.notifyObservers(this.images.get(this.categorie_selectionnee));
-	}
-	
-	public void changeNote(int nouvelleNote) {
-		this.images.get(this.categorie_selectionnee).note=nouvelleNote;
-		this.setChanged();
-		this.notifyObservers(this.images.get(this.categorie_selectionnee));
-		
+		this.notifyObservers(Categorie.lst_categorie.getItem(this.categorie_selectionnee));
 	}
 
 }
