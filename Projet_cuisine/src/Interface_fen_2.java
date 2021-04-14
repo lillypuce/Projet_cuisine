@@ -37,6 +37,13 @@ public Interface_fen_2() throws FileNotFoundException, IOException, ParseExcepti
 	this.setLayout(new BorderLayout());
 	this.setBackground(new Color(200,200,200));
 	
+	Ajouter_recette panneaudegauche = new Ajouter_recette();
+	this.add(panneaudegauche, BorderLayout.WEST);
+	panneaudegauche.setBackground(new Color(200,200,200));
+	
+	
+
+	
 	
 	
 	
