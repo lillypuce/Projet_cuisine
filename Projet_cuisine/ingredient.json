@@ -4,7 +4,6 @@
             "id": "sel",
             "type": "Sel",
             "recettes":[
-                "pain", "pizza", "pates"
             ]
         },
         {
@@ -187,6 +186,73 @@
             "type": "Maïzena",
             "recettes":[
             ]
+        },
+        {
+            "id": "farine",
+            "type": "Farine",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "oeuf",
+            "type": "Oeuf",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "eau",
+            "type": "Eau",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "riz",
+            "type": "Riz",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "saumon",
+            "type": "Saumon",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "beurre",
+            "type": "Beurre",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "chapelure",
+            "type": "Chapelure",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "poisson",
+            "type": "Poisson",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "citron",
+            "type": "Citron",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "creme_entiere",
+            "type": "Creme entiere",
+            "recettes":[
+            ]
+        },
+        {
+            "id": "vinaigre",
+            "type": "Vinaigre",
+            "recettes":[
+            ]
         }
+
     ]
 }
