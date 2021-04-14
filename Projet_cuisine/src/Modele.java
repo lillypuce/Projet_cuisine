@@ -98,11 +98,15 @@ public class Modele  extends Observable{
 			for(int j = 0;j<r1.size();j++) {
 				JSONObject r_ing = (JSONObject)r1.get(j);
 				String r_ing2 = (String)r_ing.get("id");
-				//System.out.println("Recette : " + id_re + " Ingrédient : " + r_ing2);
-				
-				System.out.println("Recette : " + id_re + " Ingredient 1 : "+ r_ing2 +" Ingrédient : " +dicoIngredients.get(r_ing2));
+				Ingredient ingredient_test = dicoIngredients.get(r_ing2);
+				if(ingredient_test.id.compareTo(r_ing2) == 0) {
+					if(ingredient_test.recettes.contains(id_re) == false) {
+						ingredient_test.recettes.add(id_re);
+					}
+				}
 				}
 			}
+		System.out.println(dicoIngredients.get("sel"));
 		
 
 		}
