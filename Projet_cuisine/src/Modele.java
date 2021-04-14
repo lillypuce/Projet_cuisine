@@ -18,6 +18,8 @@ import org.json.simple.parser.ParseException;
 
 public class Modele  extends Observable{
 
+	
+	
 	public ArrayList<ImagesModele> images;
 	
 	public Map<String,ArrayList<String>> Ing_Recettes;
@@ -52,7 +54,7 @@ public class Modele  extends Observable{
 			l.ingredients = (ArrayList<String>)ingredient;
 			l.consignes = (ArrayList<String>)consigne;
 
-			dicoRecettes.put(id, l);
+			this.dicoRecettes.put(id, l);
 
 			for(int j=0;j<ingredient.size();j++) {
 				JSONObject ing = (JSONObject)ingredient.get(j);
@@ -82,64 +84,29 @@ public class Modele  extends Observable{
 			dicoIngredients.put(id, l);
 		}
 		
-		//LIAGE DES RECETTES ET DES INGREDIENTS DANS UN DICO
-		for(int i=0;i<ja_ingredient.size();i++) {
-			for(int j=0;j<ja_recette.size();j++) {
-				JSONObject ja2_ingredient = (JSONObject)ja_ingredient.get(i);
-				JSONObject ja2_recette = (JSONObject)ja_recette.get(j);
+		for (int i=0;i<ja_recette.size();i++) {
+			JSONObject ja2 = (JSONObject)ja_recette.get(i);
+			
+			//récupération de l'id de la recette :
+			String id_re = (String) ja2.get("id");
+			
+			//récupération dans le dicoRecettes de la valeur de l'id
+			RecetteModele re = dicoRecettes.get(id_re);
+			
+			//Récupération des ingrédients 
+			JSONArray r1 = (JSONArray)re.ingredients;
+			for(int j = 0;j<r1.size();j++) {
+				JSONObject r_ing = (JSONObject)r1.get(j);
+				String r_ing2 = (String)r_ing.get("id");
+				//System.out.println("Recette : " + id_re + " Ingrédient : " + r_ing2);
 				
-				String id_ingredient = (String) ja2_ingredient.get("id");
-				String id_recette = (String) ja2_recette.get("id");
-				
-				JSONArray ingredient = (JSONArray) ja2_recette.get("ingredients");
-				
-				for(int k=0;k<ingredient.size();k++) {
-					JSONObject ing = (JSONObject)ingredient.get(k);
-					String id = (String) ing.get("id");
-					if(id.compareTo(id_ingredient) == 0) {
-						
-						//Ajout dans le dictionnaire
-						if(Ing_Recettes.containsKey(id_ingredient)) {
-							Ing_Recettes.get(id_ingredient).add(id_recette);
-						}
-						else {
-							ArrayList<String> r = new ArrayList<String>();
-							r.add(id_recette);
-							Ing_Recettes.put(id_ingredient, r);
-						}
-					}
+				System.out.println("Recette : " + id_re + " Ingredient 1 : "+ r_ing2 +" Ingrédient : " +dicoIngredients.get(r_ing2));
 				}
-				
 			}
+		
+
 		}
 		
-		//System.out.println(Ing_Recettes);
-		
-		//ECRITURE DANS LE FICHIER .JSON
-		for(int i=0;i<ja_ingredient.size();i++) {
-			JSONObject ja2_ingredient = (JSONObject)ja_ingredient.get(i);
-			String id_ingredient = (String) ja2_ingredient.get("id");
-			ArrayList<String> a = Ing_Recettes.get(id_ingredient);
-			JSONArray rec = (JSONArray) ja2_ingredient.get("recettes");
-			//System.out.println(id_ingredient + " => " +a);
-			
-			//JSONObject jsonObj = (JSONObject)rec.get(i);
-			
-			//System.out.println(a);
-			
-			//PERMET D'ECRIRE MAIS SUPPRIME TOUT
-			
-			//try (FileWriter file = new FileWriter("ingredient.json")) {
-	            //We can write any JSONArray or JSONObject instance to the file
-	        //    file.write(rec.toJSONString(a)); 
-	        //    file.flush();
-	 
-	        //} catch (IOException e) {
-	        //    e.printStackTrace();
-	        //}
-			
-		}	
-	}
 	
 	public Modele(String dir){
 
