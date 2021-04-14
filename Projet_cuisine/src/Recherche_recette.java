@@ -2,11 +2,12 @@ import java.awt.Button;
 import java.awt.Color;
 import java.awt.Panel;
 import java.awt.TextArea;
+import java.awt.TextField;
 
 public class Recherche_recette extends Panel {
 	
 	public Recherche_recette(){
-		 TextArea t = new TextArea("Tapez ici pour rechercher une recette à partir d'ingrédients",1,40); 
+		 TextField t = new TextField("Tapez ici pour rechercher une recette ï¿½ partir d'ingrï¿½dients"); 
 		 Button b = new Button("Rechercher");
 		 
 		 b.setForeground(Color.WHITE);
