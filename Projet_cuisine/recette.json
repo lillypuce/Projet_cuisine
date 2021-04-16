@@ -45,12 +45,17 @@
             ],
             "consignes":[
                 "1. Préchauffez le four Th8 (240°C).",
-                "2. Assaisonnez la purée de tomate avec du sel, 1 c. à soupe d’huile et du poivré réservez.",
-                "3. Egouttez la mozzarella et coupez-la en petits dés.",
-                "4. A l’aide du rouleau à pâtisserie, propre et fariné, étalez la pâte à pizza sur un papier sulfurisé adapté à un moule de 30 cm de diamètre environ. Faites un bourrelet sur tout le pourtour.",
-                "5. Etalez la purée de tomates sur la pizza et mettez-la dans le four préchauffé Th8 (240°C) pendant 10 min.",
-                "6. Sortez la pizza du four, étalez les dés de mozzarella et enfournez-la de nouveau pendant 10 min environ.",
-                "7.Sortez la pizza du four, assaisonnez-la avec l’huile restante et les feuilles de basilic."
+                "2. Assaisonnez la purée de tomate avec du sel",
+		"3. 1 cuillière à soupe d’huile et du poivré réservez.",
+                "4. Egouttez la mozzarella et coupez-la en petits dés.",
+		"5. Etalez la pâte à pizza sur un papier sulfurisé",
+		"6. Faites un bourrelet sur tout le pourtour.",
+                "7. Etalez la purée de tomates sur la pizza",
+		"8. Mettre dans le four préchauffé Th8 (240°C) pendant 10 min.",
+                "9. Sortez la pizza du four, étalez les dés de mozzarella",
+		"10. Enfournez-la de nouveau pendant 10 min environ.",
+                "11. Sortez la pizza du four",
+		"12. Assaisonnez-la avec l’huile restante et les feuilles de basilic."
             ]
         },
         {
@@ -113,9 +118,18 @@
             ],
             "consignes":[
                 "1. Préchauffez le four Th6.",
-                "2. Déroulez la pâte sur la feuille de cuisson. Piquez-la avec une fourchette. Faites la pré-cuire 5 min au four préalablement chauffé.",
-                "3. Faites chauffer 1 cuillère à café d'huile dans une sauteuse anti-adhésive.Faites-y cuire les crevettes surgelées 4 min de chaque côté et décortiquez-les. Ajoutez les gousses d’ail émincées et les fruits de mer surgelés et faites cuire 1 min encore le tout. Versez le vin blanc et poursuivez la cuisson 2 min.",
-                "4. Étalez le coulis de tomate puis les tranches de tomates sur la pizza. Salez et poivrez. Répartissez les fruits de mer. Disposez les crevettes décortiquées, saupoudrez d’origan et nappez d’une cuillère à café d’huile. Passez sous le grill 10 min."
+                "2. Déroulez la pâte sur la feuille de cuisson.",
+		"3. Faites la pré-cuire 5 min au four préalablement chauffé.",
+                "4. Faites chauffer 1 cuillère à café d'huile dans une sauteuse anti-adhésive.",
+		"5. Faites-y cuire les crevettes surgelées 4 min de chaque côté et décortiquez-les.",
+		"6. Ajoutez les gousses d’ail émincées et les fruits de mer surgelés.",
+		"7. Faites encore cuire le tout pendant 1 min.",
+		"8. Versez le vin blanc et poursuivez la cuisson 2 min.",
+                "9. Étalez le coulis de tomate puis les tranches de tomates sur la pizza.",
+		"10. Salez et poivrez. Répartissez les fruits de mer.",
+		"11. Disposez les crevettes décortiquées",
+		"12. Saupoudrez d’origan et nappez d’une cuillère à café d’huile.",
+		"13. Passez sous le grill 10 min."
             ]
         },
         {
@@ -162,10 +176,21 @@
                 }
             ],
             "consignes":[
-                "1. Débutons par la sauce. Émincez l’échalote et faites-la revenir dans une casserole avec le beurre. Versez le cidre et laissez réduire pendant 10 min à feu moyen. Incorporez la crème et assaisonnez à votre goût. Laissez réduire à nouveau pendant 10 min. Vous devez obtenir un mélange homogène. Réservez au chaud.",
-                "2. Pendant ce temps, fendez la chair des magrets de canard en diagonale. Dans une poêle anti-adhésive, faites chauffer côté peau sans ajouter de matière grasse. Laissez dorer pendant 5 min. Couvrez et continuez la cuisson à feu doux 10 min supplémentaires. 1 min avant la fin de la cuisson, retournez-les côté chair. Réservez.",
-                "3. Épluchez les pommes et coupez-les quartiers. Placez-les dans un saladier d'eau additionné du jus de citron. Ôtez le gras de la poêle, égouttez les pommes et faites-les revenir dans la poêle 5 min. Retournez-les régulièrement pour qu'elles n'adhérent pas. Réservez au chaud.",
-                "4. Coupez les magrets en tranches, disposez-les dans un plat de service. Déposez les pommes et nappez le tout de sauce au cidre. "
+                "1. Émincez l’échalote et faites-la revenir dans une casserole du beurre.",
+		"2. Versez le cidre et laissez réduire pendant 10 min à feu moyen.",
+		"3. Incorporez la crème et assaisonnez à votre goût.",
+		"4. Laissez réduire à nouveau pendant 10 min.",
+		"5. Vous devez obtenir un mélange homogène. Réservez au chaud.",
+                "6. Pendant ce temps, fendez la chair des magrets de canard en diagonale.",
+		"7. Dans une poêle anti-adhésive, faites chauffer sans ajouter de matière grasse.",
+		"8. Laissez dorer pendant 5 min. Couvrez et continuez la cuisson à feu doux 10 min.",
+		"9. 1 min avant la fin de la cuisson, retournez-les côté chair. Réservez.",
+                "10. Épluchez les pommes et coupez-les quartiers.",
+		"11. Placez-les dans un saladier d'eau additionné du jus de citron.",
+		"12. Ôtez le gras de la poêle, égouttez les pommes et faites-les revenir dans la poêle",
+		"13. Retournez-les régulièrement pour qu'elles n'adhérent pas. Réservez au chaud.",
+                "14. Coupez les magrets en tranches, disposez-les dans un plat de service.",
+		"15. Déposez les pommes et nappez le tout de sauce au cidre. "
             ]
         },
         {
@@ -210,9 +235,15 @@
                 }
             ],
             "consignes":[
-                "1. Dans une assiette plate, versez la farine et dans une autre la chapelure. Dans une assiette creuse, battez les œufs pour en faire une omelette.",
-                "2. Salez et poivrez à votre convenance les filets de poisson des deux côtés. Coupez-les en gros morceaux. Farinez-les puis imprégnez-les des deux côtés tour à tour d’œufs battus puis de chapelure.",
-                "3. Faites fondre du beurre dans une poêle et faites frire votre poisson pané jusqu'à ce que la panure soit bien dorée. Servez immédiatement avec par exemple des frites et une salade ! Pensez à proposer un citron coupé en 2, le jus de citron est excellent sur le poisson."
+                "1. Dans une assiette plate, versez la farine et dans une autre la chapelure.",
+		"2. Dans une assiette creuse, battez les œufs pour en faire une omelette.",
+                "3. Salez et poivrez à votre convenance les filets de poisson des deux côtés.",
+	 	"4. Coupez-les en gros morceaux.",
+		"5. Farinez-les puis imprégnez-les des deux côtés tour à tour d’œufs battus puis de chapelure.",
+                "6. Faites fondre du beurre dans une poêle",
+		"7. Faites frire votre poisson pané jusqu'à ce que la panure soit bien dorée.",
+		"8. Servez immédiatement avec par exemple des frites et une salade !",
+		"9. Pensez à proposer un citron coupé en 2, le jus de citron est excellent sur le poisson."
             ]
         },
         {
@@ -258,13 +289,19 @@
                 }
             ],
             "consignes":[
-                "1. Lavez le riz plusieurs fois, jusqu'à ce que le qui s'en écoule soit bien claire (afin 'en ôter le maximum d'amidon).",
+                "1. Lavez le riz plusieurs fois, jusqu'à ce que l'eau soit bien claire",
                 "2. Mettez-le dans une casserole, ajoutez l’eau, couvrez et portez à ébullition.",
-                "3. Laissez cuire à couvert pendant 15 minutes puis retirez du feu et laissez en attente à couvert pendant 10 minutes.",
-                "4. Dans un bol, mélangez le vinaigre de riz, le sucre, le sel et le vinaigre de Xérès. Remuez jusqu'à ce que le sucre soit entièrement dissout.",
-                "5. Versez cette préparation sur le riz et mélangez. Laissez refroidir à température ambiante. Pendant ce temps, taillez le filet de saumon en fines lamelles.",
-                "6. Humidifiez vos mains et formez des petits pâtés de riz de forme ovale, de la longueur des lamelles de poisson. Posez une lamelle de saumon sur chaque boulette de riz.",
-                "7. Disposez les sushis dans un plat, recouvrez-les de film alimentaire et réservez au frais jusqu’au moment de servir."
+                "3. Laissez cuire à couvert pendant 15 minutes",
+		"4. Retirez du feu et laissez en attente à couvert pendant 10 minutes.",
+                "5. Dans un bol, mélangez le vinaigre de riz, le sucre, le sel et le vinaigre de Xérès.",
+		"6. Remuez jusqu'à ce que le sucre soit entièrement dissout.",
+                "7. Versez cette préparation sur le riz et mélangez.",
+		"8. Laissez refroidir à température ambiante.",
+		"9. Pendant ce temps, taillez le filet de saumon en fines lamelles.",
+                "10. Humidifiez vos mains et formez des petits pâtés de riz de forme ovale",
+		"11. Posez une lamelle de saumon sur chaque boulette de riz.",
+                "12. Disposez les sushis dans un plat",
+		"13. Recouvrez-les de film alimentaire et réservez au frais jusqu’au moment de servir."
             ]
         },
         {
@@ -318,9 +355,12 @@
                 "2. Placez une feuille de papier cuisson sur une plaque allant au four.",
                 "3. Déposez les tranches de pain de mie sur la plaque recouverte de papier cuisson.",
                 "4. Déposez un chèvre frais sur chaque tranche de pain de mie.",
-                "5. Versez le miel sur le dessus de chaque chèvre frais puis parsemez-les de cerneaux de noix concassés, d’herbes de Provence et de thym séché. Enfin, salez et poivrez à votre goût.",
-                "6. Enfournez la plaque de four et faites-cuire les toasts au chèvre frais pendant 10 minutes, jusqu’à ce que les fromage soient bien gratinés.",
-                "7. Servez aussitôt les toasts au chèvre frais dans les assiettes pour accompagner une salade verte assaisonnée à l’entrée. Vous pouvez également les servir tel quel à l’apéritif."
+                "5. Versez le miel sur le dessus de chaque chèvre frais.",
+		"6. Parsemez-les de cerneaux de noix concassés, d’herbes de Provence et de thym séché.",
+		"7. Salez et poivrez à votre goût.",
+                "8. Enfournez la plaque de four",
+		"9. Faites-cuire les toasts au chèvre frais pendant 10 minutes.",
+                "10. Servez aussitôt les toasts au chèvre frais dans les assiettes.",
             ]
         },
         {
@@ -367,11 +407,20 @@
             "consignes":[
                 "1. Préchauffez le four à th.7 (200 °C).",
                 "2. Étalez la pâte brisée sur un moule à tarte.",
-                "3. Versez dans une casserole le lait et 30 g de sucre. Chauffez-les en remuant sans cesse. Dans un saladier, mélangez la farine et le reste du sucre. Ajoutez l'œuf et fouettez le mélange.",
-                "4. Ajoutez petit à petit le lait chaud tout en mélangeant. Faites bouillir la crème et remuez-la continuellement avec une cuillère en bois jusqu'à ce qu'elle s'épaississe. Retirez du feu et laissez refroidir. Réservez au frais.",
-                "5. Pelez les pommes, puis épépinez-les avant de les couper en lamelles.",
-                "6. Répartissez la crème pâtissière sur le fond de tarte. Disposez par-dessus les tranches de pommes. Enfournez pendant 25 min.",
-                "7. Versez la gelée de framboise dans une petite casserole et fondez-la avec quelques gouttes d'eau. À l'aide d'un pinceau, enduisez la tarte de gelée de framboise."
+                "3. Versez dans une casserole le lait et 30 g de sucre.",
+		"4. Chauffez-les en remuant sans cesse.",
+		"5. Dans un saladier, mélangez la farine et le reste du sucre.",
+		"6. Ajoutez l'œuf et fouettez le mélange.",
+                "7. Ajoutez petit à petit le lait chaud tout en mélangeant.",
+		"8. Faites bouillir la crème.",
+		"9. Remuez-la continuellement avec une cuillère en bois jusqu'à ce qu'elle s'épaississe.",
+		"10. Retirez du feu et laissez refroidir. Réservez au frais.",
+                "11. Pelez les pommes, puis épépinez-les avant de les couper en lamelles.",
+                "12. Répartissez la crème pâtissière sur le fond de tarte.",
+		"13. Disposez par-dessus les tranches de pommes. Enfournez pendant 25 min.",
+                "14. Versez la gelée de framboise dans une petite casserole",
+		"15. Fondez-la avec quelques gouttes d'eau.",
+		"16. À l'aide d'un pinceau, enduisez la tarte de gelée de framboise."
             ]
         },
         {
@@ -398,11 +447,12 @@
             ],
             "consignes":[
                 "1. Mixez les biscuits et la Maïzena pour les réduire en poudre.",
-                "2. Dans une casserole, versez le lait et la poudre obtenue et faites chauffer à feu moyen/doux 8 minutes, sans faire bouillir. Remuez sans arrêt en raclant les bords et le fond de la casserole pour éviter que cela attache.",
-                "3. La crème épaissit.",
-                "4. Versez la crème dans les ramequins.",
-                "5. Réservez au frais.",
-                "6. Saupoudrez de spéculoos au moment de servir."
+                "2. Dans une casserole, versez le lait et la poudre obtenue.",
+		"3. Faites chauffer à feu moyen/doux 8 minutes, sans faire bouillir.",
+		"4. Remuez sans arrêt en raclant les bords et le fond de la casserole pour éviter que cela attache.",
+                "5. Versez la crème dans les ramequins.",
+                "6. Réservez au frais.",
+                "7. Saupoudrez de spéculoos au moment de servir."
             ]
         }
     ]
