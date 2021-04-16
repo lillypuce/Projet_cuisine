@@ -1,11 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Observable;
 
@@ -18,14 +16,15 @@ import org.json.simple.parser.ParseException;
 
 public class Modele  extends Observable{
 
-	
-	
 	public ArrayList<ImagesModele> images;
 	
 	public Map<String,ArrayList<String>> Ing_Recettes;
 	public HashMap<String, RecetteModele> dicoRecettes;
 	
 	public static int categorie_selectionnee = 0;
+	public static int recette_selectionnee = 0;
+	
+	public static String nom_recette_selectionnee, aff_recette;
 	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
@@ -129,14 +128,25 @@ public class Modele  extends Observable{
 		this.setChanged();
 		this.notifyObservers(Categorie.lst_categorie.getItem(this.categorie_selectionnee));
 	}
-	
-	public void changeNote(int nouvelleNote) {
-		this.images.get(this.categorie_selectionnee).note=nouvelleNote;
+
+	public void select_recette(Integer item) {
+		
+		nom_recette_selectionnee = ListeRecettes.lst.getItem(item);
+		aff_recette = "";
+		
+		for (HashMap.Entry<String, RecetteModele> entry : dicoRecettes.entrySet()) {
+			String key = entry.getKey();
+			
+			if (dicoRecettes.get(key).nom == nom_recette_selectionnee) {
+				for (int i=0; i<dicoRecettes.get(key).consignes.size(); i++) {
+					aff_recette=aff_recette+dicoRecettes.get(key).consignes.get(i);
+					aff_recette=aff_recette+"\n";
+				}
+			}
+		}
+		
+		this.recette_selectionnee = item;
 		this.setChanged();
-		this.notifyObservers(this.images.get(this.categorie_selectionnee));
-
+		this.notifyObservers(ListeRecettes.lst.getItem(this.recette_selectionnee));
 	}
-
-
-
 }
