@@ -1,6 +1,3 @@
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.List;
 import java.awt.Panel;
 import java.awt.TextArea;
 import java.awt.event.ItemListener;
@@ -19,7 +16,7 @@ public class Affichage_recette extends Panel implements Observer{
 			s=s+m.dicoRecettes.get("poisson_pane").consignes.get(i);
 			s=s+"\n";
 		}
-		text = new TextArea(s,32,100);
+		text = new TextArea(s,28,65);
 		
 		text.setEditable(false);
 		this.add(text);
@@ -29,6 +26,12 @@ public class Affichage_recette extends Panel implements Observer{
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
+		text.setText("");
+		s = "";
+		s = m.aff_recette;
+		
+		text.setText(s);
+		text.setEditable(false);
+		this.add(text);
 	}
 }
