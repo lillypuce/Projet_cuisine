@@ -2,7 +2,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
-import java.awt.Toolkit;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.WindowEvent;
@@ -13,13 +12,6 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 
 public class Interface extends Frame implements WindowListener, ItemListener{
-	
-	public static Toolkit t = Toolkit.getDefaultToolkit();
-	public static Dimension d = t.getScreenSize();
-	
-	public static int HauteurFenetre = d.width-300;
-	public static int LargeurFenetre = d.height-120;
-	
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 		new Interface();
@@ -33,17 +25,15 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		Recherche_recette rr = new Recherche_recette();
 		Categorie c = new Categorie(this,m);
 		
-		this.setPreferredSize(new Dimension(HauteurFenetre,LargeurFenetre));
+		this.setPreferredSize(new Dimension(980,680));
 		this.setLayout(new BorderLayout());
 		this.setBackground(new Color(169,169,169));
 		
 		Categorie panneaudedroite = new Categorie(ctrl, m);
 		this.add(panneaudedroite, BorderLayout.EAST);
-		panneaudedroite.setBackground(new Color(139,108,66));
 		
-		ListeRecettes panneaudegauche = new ListeRecettes(this,m,c);
+		ListeRecettes panneaudegauche = new ListeRecettes(ctrl,m,c);
 		this.add(panneaudegauche, BorderLayout.WEST);
-		panneaudegauche.setBackground(new Color(139,108,66));
 		
 		Note_recette panneaudebas = new Note_recette(this, ar, rr);
 		this.add(panneaudebas, BorderLayout.SOUTH);
@@ -54,7 +44,6 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		
 		Affichage_recette panneaucentral = new Affichage_recette(this, m);
 		this.add(panneaucentral, BorderLayout.CENTER);
-		panneaucentral.setBackground(new Color(139,108,66));
 		
 		this.addWindowListener(this);
 		this.setTitle("Projet Cuisine");
@@ -65,9 +54,7 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 	@Override
 	public void windowActivated(WindowEvent arg0) {
 		// TODO Auto-generated method stub
-		
 	}
-
 	@Override
 	public void windowClosed(WindowEvent arg0) {
 		// TODO Auto-generated method stub
