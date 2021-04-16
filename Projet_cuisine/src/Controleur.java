@@ -12,8 +12,13 @@ public class Controleur implements ItemListener {
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() instanceof java.awt.List) {
-			this.modl.select_categ((Integer)e.getItem());	
+		
+		if (e.getSource() == Categorie.lst_categorie) {
+			this.modl.select_categ((Integer)e.getItem());
+			this.modl.select_recette(0);
+		}
+		if (e.getSource() == ListeRecettes.lst) {
+			this.modl.select_recette((Integer)e.getItem());
 		}
 		
 	}
