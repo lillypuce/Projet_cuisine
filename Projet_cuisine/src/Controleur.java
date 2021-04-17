@@ -14,8 +14,12 @@ public class Controleur implements ItemListener {
 		// TODO Auto-generated method stub
 		
 		if (e.getSource() == Categorie.lst_categorie) {
+			if (modl.nom_recette_selectionnee == null) {
+				modl.nom_recette_selectionnee ="";
+			}
 			this.modl.select_categ((Integer)e.getItem());
 			this.modl.select_recette(0);
+			
 		}
 		if (e.getSource() == ListeRecettes.lst) {
 			this.modl.select_recette((Integer)e.getItem());
