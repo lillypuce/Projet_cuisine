@@ -1,5 +1,6 @@
 import java.awt.Button;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Label;
 import java.awt.Panel;
@@ -18,12 +19,14 @@ public class Ajouter_recette extends Panel implements ActionListener{
 		
 		Label l0,l1,l2,l3,l4,l5,l6;
 		TextArea text;
-		String s="ex: 1. Préchauffez le four Th8 (240°C). ";
 		
 		l0=new Label("Nouvelle recette");
-		l0.setBounds(50,0,250,20);
+		l0.setFont(new Font("LucidaSans", Font.BOLD, 22));
+		l0.setBounds(50,10,250,40);
+		
 		
 		l1=new Label("Tapez ici la catégorie de la recette");
+		//l1.setFont(new Font("Arial", Font.BOLD, 12));
 		l1.setBounds(50,80,250,20);
 		TextField cat = new TextField("ex: Plats"); 
 		cat.setBounds(50,100,250,20);
@@ -50,7 +53,7 @@ public class Ajouter_recette extends Panel implements ActionListener{
 		
 		l6=new Label("Entrez ici les consignes de la recette");
 		l6.setBounds(450,80,250,20);
-		text = new TextArea(s,100,65);
+		text = new TextArea("ex: 1. Préchauffez le four Th8 (240°C). ",100,65);
 		text.setEditable(true);
 		text.setBounds(450, 100, 400, 400);
 		
@@ -82,7 +85,7 @@ public class Ajouter_recette extends Panel implements ActionListener{
 		 this.add(text);
 		 
 		 this.add(b);
-		 this.setSize(900,900);
+		 this.setSize(900,800);
 		 this.setLayout(null);
 		 this.setVisible(true);
 		
