@@ -7,6 +7,7 @@ import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class formulaire extends Panel implements ActionListener{
 	
@@ -58,10 +59,28 @@ public class formulaire extends Panel implements ActionListener{
 		 b.setBackground(new Color(200,200,200));
 		 b.setBounds(50,550,250,20);
 		 
+		 
+		 ArrayList test = new ArrayList();
+		 
 		 b.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
+	            	String tcat=cat.getText();
+	            	String tscat=scat.getText();
+	            	String texnom=tnom.getText();
+	            	String ting=ing.getText();
+	            	String tdos=dos.getText();
+	            	String Ttext=text.getText();
 	                
+	                test.add(tcat);
+	                test.add(tscat);
+	                test.add(texnom);
+	                test.add(ting);
+	                test.add(tdos);
+	                test.add(Ttext);
+	                
+	                System.out.println(test);
+	                 
 	            }
 			});
 		 
