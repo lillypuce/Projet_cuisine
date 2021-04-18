@@ -29,17 +29,18 @@ public Interface_fen_2() throws FileNotFoundException, IOException, ParseExcepti
 	Modele m = new Modele();
 	Controleur ctrl = new Controleur(m);
 	Ajouter_recette ar = new Ajouter_recette();
-	Recherche_recette rr = new Recherche_recette();
-	Categorie c = new Categorie(this,m);
 	
-	
+	 
 	this.setPreferredSize(new Dimension(HauteurFenetre,LargeurFenetre));
 	this.setLayout(new BorderLayout());
-	this.setBackground(new Color(200,200,200));
+	this.setBackground(new Color(125,100,82));
 	
-	Ajouter_recette panneaudegauche = new Ajouter_recette();
-	this.add(panneaudegauche, BorderLayout.WEST);
-	panneaudegauche.setBackground(new Color(200,200,200));
+	Fond_img2 panneaudedroite = new Fond_img2();
+	this.add(panneaudedroite, BorderLayout.EAST);
+	
+	formulaire panneaudegauche = new formulaire();
+	this.add(panneaudegauche, BorderLayout.CENTER);
+	panneaudegauche.setBackground(new Color(209,200,194));
 	
 	
 
