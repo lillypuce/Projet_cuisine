@@ -47,16 +47,16 @@ public class formulaire extends Panel implements ActionListener{
 		dos.setBounds(50,500,250,20);
 		
 		l6=new Label("Entrez ici les consignes de la recette");
-		l6.setBounds(450,80,250,20);
+		l6.setBounds(330,80,250,20);
 		text = new TextArea("ex: 1. Préchauffez le four Th8 (240°C). ",100,65);
 		text.setEditable(true);
-		text.setBounds(450, 100, 400, 400);
+		text.setBounds(330, 100, 310, 310);
 		
 		
 		Button b = new Button("Ajouter recette");
 		 
 		 b.setForeground(Color.WHITE);
-		 b.setBackground(new Color(200,200,200));
+		 b.setBackground(new Color(0,128,0));
 		 b.setBounds(50,550,250,20);
 		 
 		 
