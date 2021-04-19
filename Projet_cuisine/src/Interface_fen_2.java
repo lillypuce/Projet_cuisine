@@ -2,7 +2,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
-import java.awt.Toolkit;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.WindowEvent;
@@ -13,49 +12,31 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 
 public class Interface_fen_2 extends Frame implements WindowListener, ItemListener{
-
-	public static Toolkit t = Toolkit.getDefaultToolkit();
-	public static Dimension d = t.getScreenSize();
 	
-	public static int HauteurFenetre = d.width-300;
-	public static int LargeurFenetre = d.height-120;
+	public Interface_fen_2() throws FileNotFoundException, IOException, ParseException {
+		
+		Modele m = new Modele();
+		Controleur ctrl = new Controleur(m);
+		Ajouter_recette ar = new Ajouter_recette();
+		
+		 
+		this.setPreferredSize(new Dimension(980,680));
+		this.setLayout(new BorderLayout());
+		this.setBackground(new Color(125,100,82));
+		
+		Fond_img2 panneaudedroite = new Fond_img2();
+		this.add(panneaudedroite, BorderLayout.EAST);
+		
+		formulaire panneaudegauche = new formulaire();
+		this.add(panneaudegauche, BorderLayout.CENTER);
+		panneaudegauche.setBackground(new Color(209,200,194));
 	
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
-		// TODO Auto-generated method stub
-		new Interface_fen_2();
-
+		this.addWindowListener(this);
+		this.setTitle("Projet Cuisine ajout recette");
+		this.pack();
+		this.setVisible(true);
 	}
-public Interface_fen_2() throws FileNotFoundException, IOException, ParseException {
-	Modele m = new Modele();
-	Controleur ctrl = new Controleur(m);
-	Ajouter_recette ar = new Ajouter_recette();
 	
-	 
-	this.setPreferredSize(new Dimension(HauteurFenetre,LargeurFenetre));
-	this.setLayout(new BorderLayout());
-	this.setBackground(new Color(125,100,82));
-	
-	Fond_img2 panneaudedroite = new Fond_img2();
-	this.add(panneaudedroite, BorderLayout.EAST);
-	
-	formulaire panneaudegauche = new formulaire();
-	this.add(panneaudegauche, BorderLayout.CENTER);
-	panneaudegauche.setBackground(new Color(209,200,194));
-	
-	
-
-	
-	
-	
-	
-	this.addWindowListener(this);
-	this.setTitle("Projet Cuisine ajout recette");
-	this.pack();
-	this.setVisible(true);
-}
-		
-		
-
 	@Override
 	public void itemStateChanged(ItemEvent arg0) {
 		// TODO Auto-generated method stub
@@ -78,7 +59,7 @@ public Interface_fen_2() throws FileNotFoundException, IOException, ParseExcepti
 	@Override
 	public void windowClosing(WindowEvent arg0) {
 		// TODO Auto-generated method stub
-		System.exit(0);
+		this.dispose();
 		
 	}
 
