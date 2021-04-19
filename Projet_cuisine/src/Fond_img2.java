@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class Fond_img2 extends Canvas{
 	
 	Image ig = null;
-	String chemin = "images/test8.jpg";
+	String chemin = "images/fond_img_formulaire.jpg";
 	
 	public Fond_img2() {
 		super();
