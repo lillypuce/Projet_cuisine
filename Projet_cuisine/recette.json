@@ -8,38 +8,31 @@
             "ingredients":[
                 {
                     "id": "sel",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id":  "poivre",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id": "pate_à_pizza",
-                    "quantite": 400,
-                    "dosage": "g"
+                    "quantite": "400g"
                 },
                 {
                     "id": "purée_de_tomates",
-                    "quantite": 6,
-                    "dosage": "cuillérées"
+                    "quantite": "6 cuillérées"
                 },
                 {
                     "id": "mozzarella",
-                    "quantite": 250,
-                    "dosage": "g"
+                    "quantite": "250g"
                 },
                 {
                     "id": "basilic",
-                    "quantite": 4,
-                    "dosage": "feuille"
+                    "quantite": "4 feuilles"
                 },
                 {
                     "id": "huile_olive",
-                    "quantite": 5,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "5 cuilléres à soupe"
                 }
 
             ],
@@ -66,53 +59,43 @@
             "ingredients":[
                 {
                     "id": "sel",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id":  "poivre",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id": "crevette",
-                    "quantite": 8,
-                    "dosage": "grosses crevettes"
+                    "quantite": "8"
                 },
                 {
                     "id": "fruits_de_mer",
-                    "quantite": 300,
-                    "dosage": "cuillérées"
+                    "quantite": "300 cuillérées"
                 },
                 {
                     "id": "colis_de_tomates",
-                    "quantite": 100,
-                    "dosage": "g"
+                    "quantite": "100g"
                 },
                 {
                     "id": "tomate",
-                    "quantite": 4,
-                    "dosage": "fines rondelles"
+                    "quantite": "4"
                 },
                 {
                     "id": "ail",
-                    "quantite": 3,
-                    "dosage": "gousses d'ail émincées"
+                    "quantite": "3 gousses d'ail émincées"
                 },
                 {
                     "id": "huile_olive",
-                    "quantite": 2,
-                    "dosage": "cuilléres à café"
+                    "quantite": " 2 cuilléres à café"
                 },
                 {
                     "id": "vin_blanc",
-                    "quantite": 4,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "4 cuilléres à soupe"
                 },
                 {
                     "id": "origan",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 }
 
             ],
@@ -140,39 +123,35 @@
             "ingredients":[
                 {
                     "id": "sel",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id":  "poivre",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id": "magret",
-                    "quantite": 2
+                    "quantite": "2g"
                 },
                 {
                     "id": "pomme",
-                    "quantite": 3
+                    "quantite": "3g"
                 },
                 {
                     "id": "echalote",
-                    "quantite": 1
+                    "quantite": "1g"
                 },
                 {
                     "id": "creme_entiere",
-                    "quantite": 25,
-                    "dosage": "cl"
+                    "quantite": "25cl"
                 },
                 {
                     "id": "beurre",
-                    "quantite": 15,
-                    "dosage": "g noix de beurre"
+                    "quantite": "15g noix de beurre"
                 },
                 {
                     "id": "citron",
-                    "quantite": 1
+                    "quantite": "1"
                 }
             ],
             "consignes":[
@@ -201,37 +180,31 @@
             "ingredients":[
                 {
                     "id": "sel",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id":  "poivre",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id": "poisson",
-                    "quantite": 4,
-                    "dosage": "filets"
+                    "quantite": "4 filets"
                 },
                 {
                     "id": "oeuf",
-                    "quantite": 4
+                    "quantite": "4"
                 },
                 {
                     "id": "farine",
-                    "quantite": 8,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "8 cuilléres à soupe"
                 },
                 {
                     "id": "chapelure",
-                    "quantite": 8,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "8 cuilléres à soupe"
                 },
                 {
                     "id": "beurre",
-                    "quantite": 2,
-                    "dosage": "noix de beurre"
+                    "quantite": "2 noix de beurre"
                 }
             ],
             "consignes":[
@@ -254,38 +227,31 @@
             "ingredients":[
                 {
                     "id": "sel",
-                    "quantite": 2,
-                    "dosage": "cuilléres à café"
+                    "quantite": "2 cuilléres à café"
                 },
                 {
                     "id":  "saumon",
-                    "quantite": 600,
-                    "dosage": "g de filet"
+                    "quantite": "600g de filet"
                 },
                 {
                     "id": "riz",
-                    "quantite": 350,
-                    "dosage": "g"
+                    "quantite": "350g"
                 },
                 {
                     "id": "eau",
-                    "quantite": 35,
-                    "dosage": "cl"
+                    "quantite": "35cl"
                 },
                 {
                     "id": "vinaigre_riz",
-                    "quantite": 4,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "4 cuilléres à soupe"
                 },
                 {
                     "id": "sucre",
-                    "quantite": 2,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "2 cuilléres à soupe"
                 },
                 {
                     "id": "vinaigre",
-                    "quantite": 2,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "2 cuilléres à soupe"
                 }
             ],
             "consignes":[
@@ -312,42 +278,35 @@
             "ingredients":[
                 {
                     "id": "sel",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id":  "poivre",
-                    "quantite": 1,
-                    "dosage": "g"
+                    "quantite": "1g"
                 },
                 {
                     "id": "chevre",
-                    "quantite": 4
+                    "quantite": "4"
                 },
                 {
                     "id": "pain_de_mie",
-                    "quantite": 4,
-                    "dosage": "tranches"
+                    "quantite": "4 tranches"
                 },
                 {
                     "id": "miel",
-                    "quantite": 4,
-                    "dosage": "cuilléres à café"
+                    "quantite": "4 cuilléres à café"
                 },
                 {
                     "id": "noix",
-                    "quantite": 4,
-                    "dosage": "cerneaux"
+                    "quantite": "4 cerneaux"
                 },
                 {
                     "id": "herbes",
-                    "quantite": 1,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "1 cuilléres à soupe"
                 },
                 {
                     "id": "thym",
-                    "quantite": 1,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "1 cuilléres à soupe"
                 }
             ],
             "consignes":[
@@ -371,37 +330,32 @@
             "ingredients":[
                 {
                     "id": "pate_brisée",
-                    "quantite": 1
+                    "quantite": "1"
                 },
                 {
                     "id": "pomme",
-                    "quantite": 500,
-                    "dosage": "g"
+                    "quantite": "500g"
                 },
                 {
                     "id": "gelee_framboise",
-                    "quantite": 2,
-                    "dosage": "cuilléres à soupe"
+                    "quantite": "2 cuilléres à soupe"
 
                 },
                 {
                     "id": "lait",
-                    "quantite": 25,
-                    "dosage": "cl"
+                    "quantite": "25 cl"
                 },
                 {
                     "id": "farine",
-                    "quantite": 25,
-                    "dosage": "g"
+                    "quantite": "25g"
                 },
                 {
                     "id": "sucre",
-                    "quantite": 60,
-                    "dosage": "g"
+                    "quantite": "60g"
                 },
                 {
                     "id": "oeuf",
-                    "quantite": 1
+                    "quantite": "1"
                 }
             ],
             "consignes":[
@@ -431,17 +385,15 @@
             "ingredients":[
                 {
                     "id": "speculoos",
-                    "quantite": 8
+                    "quantite": "8"
                 },
                 {
                     "id": "lait",
-                    "quantite": 500,
-                    "dosage": "ml"
+                    "quantite": "500ml"
                 },
                 {
                     "id": "maizena",
-                    "quantite": 2,
-                    "dosage": "cuilléres à café"
+                    "quantite": "2 cuilléres à café"
 
                 }
             ],
