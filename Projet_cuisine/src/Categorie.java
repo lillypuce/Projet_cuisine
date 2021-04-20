@@ -1,3 +1,6 @@
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.Label;
 import java.awt.List;
 import java.awt.Panel;
 import java.awt.event.ItemListener;
@@ -12,6 +15,8 @@ public class Categorie extends Panel implements Observer{
 	
 	public Categorie(ItemListener l, Modele m) {
 		
+		this.setLayout(new BorderLayout());
+		
 		lst_categorie = new List(29);
 		ArrayList<String> lst = new ArrayList<>();
 		
@@ -23,7 +28,12 @@ public class Categorie extends Panel implements Observer{
 				lst.add(m.dicoRecettes.get(key).categorie);
 			}
 		}
-		this.add(lst_categorie);
+		
+		Label c = new Label("CATEGORIES");
+		c.setFont(new Font("Serif", Font.BOLD, 16));
+		
+		this.add(c, BorderLayout.NORTH);
+		this.add(lst_categorie, BorderLayout.CENTER);
 		lst_categorie.addItemListener(l);
 		lst_categorie.select(0);
 		
