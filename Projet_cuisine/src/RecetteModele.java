@@ -5,6 +5,7 @@ public class RecetteModele {
 	//public String chemin;
 	public int note;
 	String id,nom, categorie, souscategorie;
+	ArrayList<ArrayList<String>> affichage_ingredients;
 	ArrayList<String> ingredients;
 	ArrayList<String> consignes;
 	
@@ -14,6 +15,7 @@ public class RecetteModele {
 		this.categorie=c;
 		this.souscategorie=sc;
 		this.ingredients = new ArrayList<>();
+		this.affichage_ingredients = new ArrayList<>();
 		this.consignes = new ArrayList<>();
 	}
 	public String toString() {
