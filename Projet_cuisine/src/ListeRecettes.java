@@ -1,3 +1,6 @@
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.Label;
 import java.awt.List;
 import java.awt.Panel;
 import java.awt.event.ItemListener;
@@ -17,6 +20,8 @@ public class ListeRecettes extends Panel implements Observer{
 	public static ArrayList<String> lst_desserts = new ArrayList<String>(29);
 
 	public ListeRecettes(ItemListener l, Modele m, Categorie c) {
+		
+		this.setLayout(new BorderLayout());
 		
 		for (int i=0; i<3; i++) {
 			for (HashMap.Entry<String, RecetteModele> entry : m.dicoRecettes.entrySet()) {
@@ -43,7 +48,11 @@ public class ListeRecettes extends Panel implements Observer{
 			lst.add(lst_plats.get(i));
 		}
 		
-		this.add(lst);
+		Label r = new Label("RECETTES");
+		r.setFont(new Font("Serif", Font.BOLD, 16));
+		
+		this.add(r, BorderLayout.NORTH);
+		this.add(lst, BorderLayout.CENTER);
 		lst.addItemListener(l);
 		lst.select(0);
 		
