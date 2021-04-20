@@ -24,7 +24,7 @@ public class Modele  extends Observable{
 	public static int categorie_selectionnee = 0;
 	public static int recette_selectionnee = 0;
 	
-	public static String nom_recette_selectionnee, aff_recette;
+	public static String nom_recette_selectionnee, consignes_recette, ingredients_recette;
 	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
@@ -49,17 +49,25 @@ public class Modele  extends Observable{
 			String souscategorie = (String) ja2.get("sous categorie");
 
 			RecetteModele l = new RecetteModele(id,nom,categorie,souscategorie);
-
-			l.ingredients = (ArrayList<String>)ingredient;
-			l.consignes = (ArrayList<String>)consigne;
-
-			this.dicoRecettes.put(id, l);
-
+			
+			ArrayList<ArrayList<String>> l_ingredient = new ArrayList<>();
+			ArrayList<String> l_ingredient2 = new ArrayList<>();
+			
 			for(int j=0;j<ingredient.size();j++) {
 				JSONObject ing = (JSONObject)ingredient.get(j);
-
-				String id_ingredient = (String) ing.get("id");	
+				String id_ingredient = (String) ing.get("id");
+				String quantite_ingredient = (String) ing.get("quantite");
+				
+				l_ingredient2.add(id_ingredient);
+				l_ingredient2.add(quantite_ingredient);
+				l_ingredient.add(l_ingredient2);
+				l_ingredient2 = new ArrayList<>();
 			}
+			l.affichage_ingredients = l_ingredient;
+			l.ingredients = (ArrayList<String>)ingredient;
+			l.consignes = (ArrayList<String>)consigne;
+			
+			this.dicoRecettes.put(id, l);
 		}
 		
 		//REMPLISSAGE DU DICO POUR LES INGREDIENTS
@@ -132,17 +140,26 @@ public class Modele  extends Observable{
 	public void select_recette(Integer item) {
 		
 		nom_recette_selectionnee = ListeRecettes.lst.getItem(item);
-		aff_recette = "";
+		consignes_recette = "";
+		ingredients_recette="";
 		
 		for (HashMap.Entry<String, RecetteModele> entry : dicoRecettes.entrySet()) {
 			String key = entry.getKey();
 			
 			if (dicoRecettes.get(key).nom == nom_recette_selectionnee) {
 				for (int i=0; i<dicoRecettes.get(key).consignes.size(); i++) {
-					aff_recette=aff_recette+dicoRecettes.get(key).consignes.get(i);
-					aff_recette=aff_recette+"\n";
+					consignes_recette=consignes_recette+dicoRecettes.get(key).consignes.get(i);
+					consignes_recette=consignes_recette+"\n";
 				}
+				for (int i=0; i<dicoRecettes.get(key).affichage_ingredients.size(); i++) {
+					ingredients_recette=ingredients_recette+"NOM : " + dicoRecettes.get(key).affichage_ingredients.get(i).get(0);
+					ingredients_recette=ingredients_recette+"\nQUANTITE : " + dicoRecettes.get(key).affichage_ingredients.get(i).get(1);
+					ingredients_recette=ingredients_recette+"\n\n";
+				}
+				System.out.println(ingredients_recette);
+				System.out.println("----------------");
 			}
+			
 		}
 		
 		this.recette_selectionnee = item;
