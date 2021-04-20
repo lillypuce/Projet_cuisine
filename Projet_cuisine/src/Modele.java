@@ -24,7 +24,7 @@ public class Modele  extends Observable{
 	public static int categorie_selectionnee = 0;
 	public static int recette_selectionnee = 0;
 	
-	public static String nom_recette_selectionnee, consignes_recette, ingredients_recette;
+	public static String nom_recette_selectionnee, consignes_recette, ingredients_recette,id_recette;
 	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
@@ -66,6 +66,8 @@ public class Modele  extends Observable{
 			l.affichage_ingredients = l_ingredient;
 			l.ingredients = (ArrayList<String>)ingredient;
 			l.consignes = (ArrayList<String>)consigne;
+			l.id =id;
+			
 			
 			this.dicoRecettes.put(id, l);
 		}
@@ -142,12 +144,15 @@ public class Modele  extends Observable{
 		nom_recette_selectionnee = ListeRecettes.lst.getItem(item);
 		consignes_recette = "";
 		ingredients_recette="";
+		id_recette="";
 		
 		for (HashMap.Entry<String, RecetteModele> entry : dicoRecettes.entrySet()) {
 			String key = entry.getKey();
 			
 			if (dicoRecettes.get(key).nom == nom_recette_selectionnee) {
+				id_recette=id_recette+dicoRecettes.get(key).id;
 				for (int i=0; i<dicoRecettes.get(key).consignes.size(); i++) {
+					
 					consignes_recette=consignes_recette+dicoRecettes.get(key).consignes.get(i);
 					consignes_recette=consignes_recette+"\n";
 				}
@@ -156,6 +161,7 @@ public class Modele  extends Observable{
 					ingredients_recette=ingredients_recette+"\nQUANTITE : " + dicoRecettes.get(key).affichage_ingredients.get(i).get(1);
 					ingredients_recette=ingredients_recette+"\n\n";
 				}
+				System.out.println(id_recette);
 				System.out.println(ingredients_recette);
 				System.out.println("----------------");
 			}
