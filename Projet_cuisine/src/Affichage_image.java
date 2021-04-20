@@ -16,9 +16,10 @@ public class Affichage_image extends Canvas implements Observer {
 	public Affichage_image(Modele m) {
 		super();
 		this.setPreferredSize(new Dimension(140,60));
-		String imgDefaut = m.images.get(0).chemin;
+		String imgDefaut = "poisson_pane";
+		String test= "images/"+imgDefaut+".jpg";
 		try {
-			img = ImageIO.read(new File(imgDefaut));
+			img = ImageIO.read(new File(test));
 		} catch (IOException e) {
 			throw new RuntimeException("L'image "+imgDefaut+" est introuvable");
 		}
@@ -33,12 +34,14 @@ public class Affichage_image extends Canvas implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
-		ImagesModele im = (ImagesModele)arg;
+		//ImagesModele im = (ImagesModele)arg;
+		String imgDefaut = Modele.id_recette;
+		String test= "images/"+imgDefaut+".jpg";
 		try {
-			img = ImageIO.read(new File(im.chemin));
+			img = ImageIO.read(new File(test));
 			repaint();
 		} catch (IOException e) {
-			throw new RuntimeException("L'image " + im.chemin + " est introuvable");
+			throw new RuntimeException("L'image " + imgDefaut + " est introuvable");
 		}
 		
 	}
