@@ -17,6 +17,9 @@ public class Affichage_image extends Canvas implements Observer {
 		super();
 		this.setPreferredSize(new Dimension(240,160));
 		String imgDefaut = "poisson_pane";
+		//Pour avoir l'image correspondant à la recette en haut de l'inteface
+		//String chemin= "test/"+imgDefaut+".jpg";
+		
 		String chemin= "images/"+imgDefaut+".jpg";
 		try {
 			img = ImageIO.read(new File(chemin));
@@ -36,6 +39,9 @@ public class Affichage_image extends Canvas implements Observer {
 		// TODO Auto-generated method stub
 		//ImagesModele im = (ImagesModele)arg;
 		String imgDefaut = Modele.id_recette;
+		//Pour avoir l'image correspondant à la recette en haut de l'inteface
+		//String chemin= "test/"+imgDefaut+".jpg";
+		
 		String chemin= "images/"+imgDefaut+".jpg";
 		try {
 			img = ImageIO.read(new File(chemin));
