@@ -20,6 +20,7 @@ public class Modele  extends Observable{
 	
 	public Map<String,ArrayList<String>> Ing_Recettes;
 	public HashMap<String, RecetteModele> dicoRecettes;
+	public Map<String, Ingredient> dicoIngredients = new HashMap<String, Ingredient>();
 	
 	public static int categorie_selectionnee = 0;
 	public static int recette_selectionnee = 0;
@@ -78,7 +79,6 @@ public class Modele  extends Observable{
 		
 		JSONArray ja_ingredient = (JSONArray) jo_ingredient.get("ingredients");
 		
-		Map<String, Ingredient> dicoIngredients = new HashMap<String, Ingredient>();
 		
 		for (int i=0;i<ja_ingredient.size();i++) {
 			JSONObject ja2 = (JSONObject)ja_ingredient.get(i);
