@@ -22,7 +22,7 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		Modele m = new Modele();
 		Controleur ctrl = new Controleur(m);
 		Ajouter_recette ar = new Ajouter_recette();
-		Recherche_recette rr = new Recherche_recette();
+		Recherche_recette rr = new Recherche_recette(m);
 		Categorie c = new Categorie(this,m);
 		
 		this.setPreferredSize(new Dimension(980,680));
