@@ -17,7 +17,7 @@ public class Interface_fen_3 extends Frame implements WindowListener, ItemListen
 		
 		Modele m = new Modele();
 		Controleur ctr2 = new Controleur(m);
-		Recherche_recette Rr = new Recherche_recette();
+		Recherche_recette Rr = new Recherche_recette(m);
 		
 		 
 		this.setPreferredSize(new Dimension(980,680));
@@ -27,7 +27,7 @@ public class Interface_fen_3 extends Frame implements WindowListener, ItemListen
 		Fond_img2 panneaudedroite = new Fond_img2();
 		this.add(panneaudedroite, BorderLayout.EAST);
 		
-		Formulaire1 panneaudegauche = new Formulaire1();
+		Formulaire1 panneaudegauche = new Formulaire1(Rr);
 		this.add(panneaudegauche, BorderLayout.CENTER);
 		panneaudegauche.setBackground(new Color(209,200,194));
 	

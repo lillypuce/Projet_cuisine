@@ -5,12 +5,20 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import org.json.simple.parser.ParseException;
 
 public class Recherche_recette extends Panel implements ActionListener {
 	
-	public Recherche_recette(){
+	Modele m;
+	
+	public ArrayList<String> liste_recette5 = new ArrayList<String>();
+	
+	public Recherche_recette(Modele m){
 		 TextField t1 = new TextField("Tapez un ingredient pour rechercher une recette"); 
 		 Button b1 = new Button("Rechercher");
 		 
@@ -21,14 +29,29 @@ public class Recherche_recette extends Panel implements ActionListener {
 		 this.add(b1);
 		 
 		 
+		 
 		 b1.addActionListener(new ActionListener() {
 	            @Override
 	     public void actionPerformed(ActionEvent e) {
+	            	final JFrame parent = new JFrame();
 	            	Interface I;
 	            	Interface_fen_3 I3;
+	            	
+	            	
 					try {
 						I3 = new Interface_fen_3();
 						I3.setVisible(true);
+						String ing_rec = t1.getText();
+				     	ArrayList<String> recette = m.dicoIngredients.get(ing_rec).recettes;
+				     	for (int i = 0;i<recette.size();i++) {
+				     		String r1 = recette.get(i);
+				     		liste_recette5.add(r1);
+				     	}
+						String name = JOptionPane.showInputDialog(parent,
+		                        liste_recette5, null);
+						
+						
+						
 						
 						//I = new Interface();
 						//I.setVisible(false);
@@ -42,9 +65,8 @@ public class Recherche_recette extends Panel implements ActionListener {
 
 	            }
 			});
-			this.add(b1);
-
-		}
+	}
+		
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -52,4 +74,5 @@ public class Recherche_recette extends Panel implements ActionListener {
 		
 	}
 	}
+	
 
