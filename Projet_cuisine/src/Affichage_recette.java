@@ -31,7 +31,7 @@ public static Label titre;
 			s=s+"\n\n";
 			
 		}
-		text = new TextArea(s,10,43);
+		text = new TextArea(s,10,50);
 		text.setEditable(false);
 		
 		//Ingredients
@@ -39,7 +39,7 @@ public static Label titre;
 			String nom = m.dicoRecettes.get("poisson_pane").affichage_ingredients.get(i).get(0);
 			String quantite = m.dicoRecettes.get("poisson_pane").affichage_ingredients.get(i).get(1);
 			
-			s3=s3+"NOM : " + nom + "\nQUANTITE : " + quantite + "\n\n";
+			s3=s3+"-" + nom + " (" + quantite + ")\n\n";
 		}
 		
 		text2 = new TextArea(s3,8,20);
@@ -55,7 +55,7 @@ public static Label titre;
 	public void update(Observable o, Object arg) {
 		s2 = m.nom_recette_selectionnee.toUpperCase();
 		titre.setText(s2);
-		titre.setBounds(s2.length()+80,8,500,13);
+		titre.setBounds(s2.length()+118,8,500,13);
 		
 		text.setText("");
 		s = "CONSIGNES DE PREPARATION : \n\n";
