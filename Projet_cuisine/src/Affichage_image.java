@@ -12,17 +12,17 @@ import javax.imageio.ImageIO;
 public class Affichage_image extends Canvas implements Observer {
 	
 	Image img = null;
+	String imgDefaut;
 	
 	public Affichage_image(Modele m) {
 		super();
-		this.setPreferredSize(new Dimension(240,160));
-		String imgDefaut = "poisson_pane";
-		//Pour avoir l'image correspondant à la recette en haut de l'inteface
-		//String chemin= "test/"+imgDefaut+".jpg";
+		this.setPreferredSize(new Dimension(500,200));
 		
-		String chemin= "images/"+imgDefaut+".jpg";
+		imgDefaut = "fond_image_recette";
+		File chemin= new File("images/"+imgDefaut+".jpg");
+		
 		try {
-			img = ImageIO.read(new File(chemin));
+			img = ImageIO.read(chemin);
 		} catch (IOException e) {
 			throw new RuntimeException("L'image "+imgDefaut+" est introuvable");
 		}
@@ -36,20 +36,24 @@ public class Affichage_image extends Canvas implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		//ImagesModele im = (ImagesModele)arg;
-		String imgDefaut = Modele.id_recette;
-		//Pour avoir l'image correspondant à la recette en haut de l'inteface
-		//String chemin= "test/"+imgDefaut+".jpg";
 		
-		String chemin= "images/"+imgDefaut+".jpg";
+		imgDefaut = Modele.id_recette;
+		File chemin= new File("images2/"+imgDefaut+".jpg");
+		
 		try {
-			img = ImageIO.read(new File(chemin));
-			repaint();
+			if (chemin.isFile()) {
+				//Affiche l'image correspondant à la recette
+				img = ImageIO.read(chemin);
+				repaint();
+			}
+			else {
+				//Si la recette n'a pas d'image, on affiche l'image par défaut
+				img = ImageIO.read(new File("images/fond_image_recette.jpg"));
+				repaint();
+			}
 		} catch (IOException e) {
-			throw new RuntimeException("L'image " + imgDefaut + " est introuvable");
+			throw new RuntimeException("L'image fond_image_recette.jpg est introuvable");
 		}
-		
 	}
 
 }
