@@ -21,11 +21,14 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		
 		Modele m = new Modele();
 		Controleur ctrl = new Controleur(m);
+		
 		Ajouter_recette ar = new Ajouter_recette();
 		Recherche_recette rr = new Recherche_recette(m);
+		ListeCourses lc = new ListeCourses(ctrl,m);
+		AjouterCourses ac = new AjouterCourses();
 		Categorie c = new Categorie(this,m);
 		
-		this.setPreferredSize(new Dimension(980,680));
+		this.setPreferredSize(new Dimension(1050,680));
 		this.setLayout(new BorderLayout());
 		this.setBackground(new Color(169,169,169));
 		
@@ -37,7 +40,7 @@ public class Interface extends Frame implements WindowListener, ItemListener{
 		this.add(panneaudegauche, BorderLayout.WEST);
 		panneaudegauche.setBackground(new Color(139,108,66));
 		
-		Note_recette panneaudebas = new Note_recette(this, ar, rr);
+		Note_recette panneaudebas = new Note_recette(this, ar, rr, ac, lc);
 		this.add(panneaudebas, BorderLayout.SOUTH);
 		panneaudebas.setBackground(new Color(139,108,66));
 		
