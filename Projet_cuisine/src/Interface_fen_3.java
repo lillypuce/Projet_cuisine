@@ -24,7 +24,7 @@ public class Interface_fen_3 extends Frame implements WindowListener, ItemListen
 		this.setLayout(new BorderLayout());
 		this.setBackground(new Color(125,100,82));
 		
-		Fond_img2 panneaudedroite = new Fond_img2();
+		Fond_img panneaudedroite = new Fond_img();
 		this.add(panneaudedroite, BorderLayout.EAST);
 		
 		Formulaire1 panneaudegauche = new Formulaire1(Rr);
