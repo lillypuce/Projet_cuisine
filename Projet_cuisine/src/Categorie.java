@@ -30,7 +30,9 @@ public class Categorie extends Panel implements Observer{
 		}
 		
 		Label c = new Label("CATEGORIES");
-		c.setFont(new Font("Serif", Font.BOLD, 16));
+		c.setFont(new Font("Serif", Font.BOLD, 17));
+		
+		lst_categorie.setFont(new Font("Serif", Font.ITALIC, 14));
 		
 		this.add(c, BorderLayout.NORTH);
 		this.add(lst_categorie, BorderLayout.CENTER);
@@ -38,10 +40,7 @@ public class Categorie extends Panel implements Observer{
 		lst_categorie.select(0);
 		
 		m.addObserver(this);
-	
 	}
-
-
 
 	@Override
 	public void update(Observable o, Object arg) {
