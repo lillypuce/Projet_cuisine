@@ -24,8 +24,13 @@ public class Modele  extends Observable{
 	
 	public static int categorie_selectionnee = 0;
 	public static int recette_selectionnee = 0;
+	public static int recette_ing_selectionnee = 0;
+	public static int ingredient_taille=0;
 	
-	public static String nom_recette_selectionnee="", consignes_recette="", ingredients_recette="",id_recette="";
+	
+	public static String nom_recette_selectionnee="", consignes_recette="", ingredients_recette="",id_recette="", nom_recette_ing="";
+	
+	public static ArrayList<String> al = new ArrayList<>();
 	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
@@ -68,7 +73,6 @@ public class Modele  extends Observable{
 			l.ingredients = (ArrayList<String>)ingredient;
 			l.consignes = (ArrayList<String>)consigne;
 			l.id =id;
-			
 			
 			this.dicoRecettes.put(id, l);
 		}
@@ -115,9 +119,6 @@ public class Modele  extends Observable{
 				}
 				}
 			}
-		System.out.println(dicoIngredients.get("sel"));
-		
-
 		}
 		
 	
@@ -160,16 +161,38 @@ public class Modele  extends Observable{
 					consignes_recette=consignes_recette+"\n\n";
 				}
 				for (int i=0; i<dicoRecettes.get(key).affichage_ingredients.size(); i++) {
-					ingredients_recette=ingredients_recette+"NOM : " + dicoRecettes.get(key).affichage_ingredients.get(i).get(0);
-					ingredients_recette=ingredients_recette+"\nQUANTITE : " + dicoRecettes.get(key).affichage_ingredients.get(i).get(1);
-					ingredients_recette=ingredients_recette+"\n\n";
+					String nom =  dicoRecettes.get(key).affichage_ingredients.get(i).get(0);
+					String quantite =  dicoRecettes.get(key).affichage_ingredients.get(i).get(1);
+					
+					ingredients_recette=ingredients_recette + "-" + nom + " (" + quantite + ")\n\n";
 				}
 			}
-			
 		}
 		
 		this.recette_selectionnee = item;
 		this.setChanged();
 		this.notifyObservers(ListeRecettes.lst.getItem(this.recette_selectionnee));
+	}
+
+	public void select_ingredient(Integer item) {
+		nom_recette_ing = Interface_fen_3.l_interface3.getItem(item);
+		al.clear();
+		
+		for (HashMap.Entry<String, RecetteModele> entry : dicoRecettes.entrySet()) {
+			String key = entry.getKey();
+			if (dicoRecettes.get(key).nom == nom_recette_ing) {
+				for (int i=0; i<dicoRecettes.get(key).affichage_ingredients.size(); i++) {
+					String nom = dicoRecettes.get(key).affichage_ingredients.get(i).get(0);
+					String quantite = dicoRecettes.get(key).affichage_ingredients.get(i).get(1);
+				
+					String s = nom + " (" + quantite + ")";
+					al.add(s);
+				}
+			}
+		}
+		
+		this.recette_ing_selectionnee = item;
+		this.setChanged();
+		this.notifyObservers(Interface_fen_3.l_interface3.getItem(this.recette_ing_selectionnee));
 	}
 }
