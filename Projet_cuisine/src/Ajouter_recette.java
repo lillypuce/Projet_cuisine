@@ -1,4 +1,6 @@
 import java.awt.Button;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +12,9 @@ public class Ajouter_recette extends Panel implements ActionListener{
 
 	public Ajouter_recette() {
 		Button b = new Button("Ajouter recette");
+		b.setFont(new Font("Serif", Font.BOLD, 12));
+		b.setBackground(new Color(209,200,194));
+		
 		b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
