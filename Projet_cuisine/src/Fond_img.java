@@ -7,12 +7,12 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Fond_img2 extends Canvas{
+public class Fond_img extends Canvas{
 	
 	Image ig = null;
 	String chemin = "images/fond_img_formulaire.jpg";
 	
-	public Fond_img2() {
+	public Fond_img() {
 		super();
 		this.setPreferredSize(new Dimension(300,450));
 		
