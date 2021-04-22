@@ -21,7 +21,9 @@ public class Controleur implements ItemListener {
 		if (e.getSource() == ListeRecettes.lst) {
 			this.modl.select_recette((Integer)e.getItem());
 		}
-		
+		if (e.getSource() == Interface_fen_3.l_interface3) {
+			this.modl.select_ingredient((Integer)e.getItem());
+		}
 	}
 
 }
