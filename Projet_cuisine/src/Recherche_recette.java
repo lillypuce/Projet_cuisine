@@ -19,7 +19,7 @@ public class Recherche_recette extends Panel implements ActionListener {
 	public ArrayList<String> liste_recette5 = new ArrayList<String>();
 	
 	public Recherche_recette(Modele m){
-		 TextField t1 = new TextField("Tapez un ingredient pour rechercher une recette"); 
+		 TextField t1 = new TextField("Tapez un ingredient pour rechercher une recette", 30); 
 		 Button b1 = new Button("Rechercher");
 		 
 		 b1.setForeground(Color.WHITE);
