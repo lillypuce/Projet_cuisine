@@ -1,37 +1,51 @@
-import java.awt.Button;
-import java.awt.Color;
+import java.awt.Checkbox;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.Panel;
-import java.awt.TextArea;
-import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.awt.event.ItemListener;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Formulaire1 extends Panel implements ActionListener{
-	Recherche_recette rr;
+public class IngredientsCourses extends Panel implements Observer{
 	
-	public Formulaire1(Recherche_recette rr) {
-		Label lab0,lab1;
+	public static int taille=15;
 	
-		lab0=new Label("Liste des recettes :");
-		lab0.setFont(new Font("LucidaSans", Font.BOLD, 22));
-		lab0.setBounds(50,10,250,40);
+	Checkbox[] ingredients;
+	Modele m;
+	
+	public IngredientsCourses(ItemListener l, Modele m) {
+		this.setLayout(new GridLayout(16,0));
 		
-		System.out.println(rr.liste_recette5);
-		 this.add(lab0);
+		Label lb = new Label("LISTE DES INGREDIENTS\n");
+		lb.setFont(new Font("Serif", Font.BOLD, 18));
 		
-		 this.setSize(500,500);
-		 this.setLayout(null);
-		 this.setVisible(true);
-	
-
-}
+		ingredients = new Checkbox[taille];
+		
+		this.add(lb);
+		
+		for (int i=0; i<taille; i++) {
+			this.ingredients[i] = new Checkbox("");
+			this.ingredients[i].addItemListener(l);
+			this.add(ingredients[i]);
+		}
+		m.addObserver(this);
+	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+	public void update(Observable o, Object arg) {
 		
+		if (m.al.size()<taille) {	
+			for (int i=0; i<m.al.size(); i++) {
+				this.ingredients[i].setLabel(m.al.get(i));
+				this.add(ingredients[i]);
+			}
+		}
+		else {
+			for (int i=0; i<taille; i++) {
+				this.ingredients[i].setLabel(m.al.get(i));
+				this.add(ingredients[i]);
+			}
+		}
 	}
 }
