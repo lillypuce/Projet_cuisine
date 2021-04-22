@@ -49,7 +49,7 @@ public class ListeRecettes extends Panel implements Observer{
 		}
 		
 		Label r = new Label("RECETTES");
-		r.setFont(new Font("Serif", Font.BOLD, 16));
+		r.setFont(new Font("Serif", Font.BOLD, 17));
 		
 		this.add(r, BorderLayout.NORTH);
 		this.add(lst, BorderLayout.CENTER);
