@@ -75,16 +75,19 @@ public class formulaire extends Panel implements ActionListener{
 	            	String tdos=dos.getText();
 	            	String Ttext=text.getText();
 	                
-	                
+	            	String tid=texnom.toLowerCase ();
+	            	tid = tid.replaceAll("\\s", "_");
+	            	
 	                NouvRecette.put("categorie", tcat);
 	                NouvRecette.put("SousCategorie", tscat);
 	                NouvRecette.put("nom", texnom);
-	                NouvRecette.put("id", texnom.toLowerCase ());
+	                NouvRecette.put("id", tid);
 	                NouvRecette.put("ingredients", ting);
 	                NouvRecette.put("quantite", tdos);
 	                NouvRecette.put("consigne", Ttext);
 	                
 	                System.out.println(NouvRecette);
+	                System.out.println(NouvRecette.get("id"));
 	                 
 	            }
 			});
