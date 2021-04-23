@@ -20,7 +20,7 @@ public class Interface_fen_2 extends Frame implements WindowListener, ItemListen
 		Ajouter_recette ar = new Ajouter_recette();
 		
 		 
-		this.setPreferredSize(new Dimension(980,680));
+		this.setPreferredSize(new Dimension(1050,680));
 		this.setLayout(new BorderLayout());
 		this.setBackground(new Color(125,100,82));
 		
