@@ -37,14 +37,16 @@ public class IngredientsCourses extends Panel implements Observer{
 		
 		if (m.al.size()<taille) {	
 			for (int i=0; i<m.al.size(); i++) {
+				this.ingredients[i].setLabel("");
 				this.ingredients[i].setLabel(m.al.get(i));
-				this.add(ingredients[i]);
+			}
+			for (int i=m.al.size(); i<taille; i++) {
+				this.ingredients[i].setLabel("");
 			}
 		}
 		else {
 			for (int i=0; i<taille; i++) {
 				this.ingredients[i].setLabel(m.al.get(i));
-				this.add(ingredients[i]);
 			}
 		}
 	}
