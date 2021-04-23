@@ -8,8 +8,12 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class formulaire extends Panel implements ActionListener{
+	
+	Map<String, String> NouvRecette = new HashMap<String, String>();
 	
 	public formulaire() {
 		Label l0,l1,l2,l3,l4,l5,l6;
@@ -60,7 +64,6 @@ public class formulaire extends Panel implements ActionListener{
 		 b.setBounds(50,550,250,20);
 		 
 		 
-		 ArrayList test = new ArrayList();
 		 
 		 b.addActionListener(new ActionListener() {
 	            @Override
@@ -72,14 +75,16 @@ public class formulaire extends Panel implements ActionListener{
 	            	String tdos=dos.getText();
 	            	String Ttext=text.getText();
 	                
-	                test.add(tcat);
-	                test.add(tscat);
-	                test.add(texnom);
-	                test.add(ting);
-	                test.add(tdos);
-	                test.add(Ttext);
 	                
-	                System.out.println(test);
+	                NouvRecette.put("categorie", tcat);
+	                NouvRecette.put("SousCategorie", tscat);
+	                NouvRecette.put("nom", texnom);
+	                NouvRecette.put("id", texnom.toLowerCase ());
+	                NouvRecette.put("ingredients", ting);
+	                NouvRecette.put("quantite", tdos);
+	                NouvRecette.put("consigne", Ttext);
+	                
+	                System.out.println(NouvRecette);
 	                 
 	            }
 			});
