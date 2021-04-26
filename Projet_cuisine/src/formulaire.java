@@ -85,17 +85,6 @@ public class formulaire extends Panel implements ActionListener{
 	            	
 	            	String[] Ttdos = tdos.split(",",5);
 	            
-	            	/*JSONArray r1 = (JSONArray)re.ingredients;
-	    			for(int j = 0;j<r1.size();j++) {
-	    				JSONObject r_ing = (JSONObject)r1.get(j);
-	    				String r_ing2 = (String)r_ing.get("id");
-	    				Ingredient ingredient_test = dicoIngredients.get(r_ing2);
-	    				if(ingredient_test.id.compareTo(r_ing2) == 0) {
-	    					if(ingredient_test.recettes.contains(id_re) == false) {
-	    						ingredient_test.recettes.add(id_re);
-	    					}
-	    				}
-	    				*/
 	            	for (int i=0;i<Tting.length;i++) {
 	            		String t=Tting[i];
 	            		String ti=t.toLowerCase ();
