@@ -1,0 +1,9 @@
+[
+ex:_margherita...
+ex: Margherita...
+Entrée
+ex: Pizza
+ex: sel,poivre...
+ex: 2g,3g
+ex: 1. Préchauffez le four Th8 (240°C). 
+]
