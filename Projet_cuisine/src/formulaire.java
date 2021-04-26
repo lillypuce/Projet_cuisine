@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 public class formulaire extends Panel implements ActionListener{
 	
 	Modele m;
@@ -82,7 +85,17 @@ public class formulaire extends Panel implements ActionListener{
 	            	
 	            	String[] Ttdos = tdos.split(",",5);
 	            
-	            	
+	            	/*JSONArray r1 = (JSONArray)re.ingredients;
+	    			for(int j = 0;j<r1.size();j++) {
+	    				JSONObject r_ing = (JSONObject)r1.get(j);
+	    				String r_ing2 = (String)r_ing.get("id");
+	    				Ingredient ingredient_test = dicoIngredients.get(r_ing2);
+	    				if(ingredient_test.id.compareTo(r_ing2) == 0) {
+	    					if(ingredient_test.recettes.contains(id_re) == false) {
+	    						ingredient_test.recettes.add(id_re);
+	    					}
+	    				}
+	    				*/
 	            	for (int i=0;i<Tting.length;i++) {
 	            		String t=Tting[i];
 	            		String ti=t.toLowerCase ();
@@ -91,7 +104,17 @@ public class formulaire extends Panel implements ActionListener{
 	            		///on met les nouvelles donnée dans dicoIngredients
 	            		Ingredient b = new Ingredient(ti,t);
 	            		m.dicoIngredients.put(ti,b);
+	            		Ingredient ingredient_test2 = m.dicoIngredients.get(ti);
+	            		if(ingredient_test2.id.compareTo(ti) == 0) {
+	            			if(ingredient_test2.recettes.contains(tid) == false) {
+	            				ingredient_test2.recettes.add(tid);
+	            				
+	            			}
+	            			
+	            		}
 	            	}
+	            	
+	            	
 	            	///on met les nouvelles donnée dans dicoRecettes
 	            	RecetteModele r= new RecetteModele(tid,texnom,tcat,tscat);
 	            	m.dicoRecettes.put(tid, r);
