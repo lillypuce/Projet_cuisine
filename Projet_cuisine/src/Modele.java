@@ -22,7 +22,7 @@ public class Modele  extends Observable{
 	
 	public Map<String,ArrayList<String>> Ing_Recettes;
 	public static HashMap<String, RecetteModele> dicoRecettes = new HashMap<String,RecetteModele>();
-	public Map<String, Ingredient> dicoIngredients = new HashMap<String, Ingredient>();
+	public static Map<String, Ingredient> dicoIngredients = new HashMap<String, Ingredient>();
 	
 	public static int categorie_selectionnee = 0;
 	public static int recette_selectionnee = 0;
