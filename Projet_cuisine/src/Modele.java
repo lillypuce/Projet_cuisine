@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -6,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
+import java.util.Scanner;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -19,33 +21,29 @@ public class Modele  extends Observable{
 	public ArrayList<ImagesModele> images;
 	
 	public Map<String,ArrayList<String>> Ing_Recettes;
-	public static Map<String, RecetteModele> dicoRecettes = new HashMap<String, RecetteModele>();
-	public static Map<String, Ingredient> dicoIngredients = new HashMap<String, Ingredient>();
+	public static HashMap<String, RecetteModele> dicoRecettes = new HashMap<String,RecetteModele>();
+	public Map<String, Ingredient> dicoIngredients = new HashMap<String, Ingredient>();
 	
 	public static int categorie_selectionnee = 0;
 	public static int recette_selectionnee = 0;
 	public static int recette_ing_selectionnee = 0;
 	public static int ingredient_taille=0;
 	
-	public formulaire f;
-	
 	
 	public static String nom_recette_selectionnee="", consignes_recette="", ingredients_recette="",id_recette="", nom_recette_ing="";
 	
 	public static ArrayList<String> al = new ArrayList<>();
 	
-	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
+		
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
 		JSONObject jo_recette =(JSONObject) obj_recette;
 
 		JSONArray ja_recette = (JSONArray) jo_recette.get("recettes");
 
-		this.dicoRecettes = new HashMap<String,RecetteModele>();
+		dicoRecettes = new HashMap<String,RecetteModele>();
 
-		this.Ing_Recettes = new HashMap<String,ArrayList<String>>();
-		
-		
+		Ing_Recettes = new HashMap<String,ArrayList<String>>();
 		
 		//REMPLISSAGE DU DICTIONNAIRE POUR LES RECETTES
 		for (int i=0;i<ja_recette.size();i++) {
@@ -74,18 +72,30 @@ public class Modele  extends Observable{
 				l_ingredient.add(l_ingredient2);
 				l_ingredient2 = new ArrayList<>();
 			}
-			formulaire f;
-			
-			Map<String, formulaire> NouvR = new HashMap<String, formulaire>();
-			
-			
 			l.affichage_ingredients = l_ingredient;
 			l.ingredients = (ArrayList<String>)ingredient;
 			l.consignes = (ArrayList<String>)consigne;
-			l.id =id;
 			
-			this.dicoRecettes.put(id, l);
+			dicoRecettes.put(id, l);
+			
 		}
+		
+		//CHARGEMENT DES RECETTES AJOUTEE DANS RECETTEAJOUTEE.TXT
+		File file = new File("recetteajoutee.txt");
+		FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		
+		String id2;
+		String nom;
+		String categ;
+		String sous_categ;
+		ArrayList<ArrayList<String>> ing = new ArrayList<>();
+		ArrayList<String> consig = new ArrayList<>();
+		
+		
+		
+		
+		
 		
 		//REMPLISSAGE DU DICO POUR LES INGREDIENTS
 		Object obj_ingredient = new JSONParser().parse(new FileReader("ingredient.json"));
@@ -107,17 +117,16 @@ public class Modele  extends Observable{
 			dicoIngredients.put(id, l);
 		}
 		
-		
 		for (int i=0;i<ja_recette.size();i++) {
 			JSONObject ja2 = (JSONObject)ja_recette.get(i);
 			
-			//rÃ©cupÃ©ration de l'id de la recette :
+			//récupération de l'id de la recette :
 			String id_re = (String) ja2.get("id");
 			
-			//rÃ©cupÃ©ration dans le dicoRecettes de la valeur de l'id
+			//récupération dans le dicoRecettes de la valeur de l'id
 			RecetteModele re = dicoRecettes.get(id_re);
 			
-			//RÃ©cupÃ©ration des ingrÃ©dients 
+			//Récupération des ingrédients 
 			JSONArray r1 = (JSONArray)re.ingredients;
 			for(int j = 0;j<r1.size();j++) {
 				JSONObject r_ing = (JSONObject)r1.get(j);
@@ -142,13 +151,14 @@ public class Modele  extends Observable{
 			String nomImage = file.getName().split("\\.")[0];
 			this.images.add(new ImagesModele(nomImage, "images/"+file.getName(),0));
 		}
-
+		
 	}
 
 	public void select_categ(Integer item) {
 		if (id_recette == null) {
 			id_recette = "poisson_pane";
 		}
+		
 		this.categorie_selectionnee = item;
 		this.setChanged();
 		this.notifyObservers(Categorie.lst_categorie.getItem(this.categorie_selectionnee));
@@ -176,11 +186,8 @@ public class Modele  extends Observable{
 					String quantite =  dicoRecettes.get(key).affichage_ingredients.get(i).get(1);
 					
 					ingredients_recette=ingredients_recette + "-" + nom + " (" + quantite + ")\n\n";
-					
 				}
 			}
-			System.out.println(dicoRecettes);
-			//System.out.println(dicoIngredients);
 		}
 		
 		this.recette_selectionnee = item;
