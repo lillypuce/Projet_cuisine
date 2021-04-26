@@ -41,6 +41,9 @@ public class Interface_fen_3 extends Frame implements WindowListener, Observer{
 		IngredientsCourses panneaudegauche = new IngredientsCourses(l,m);
 		this.add(panneaudegauche, BorderLayout.WEST);
 		
+		OptionCourses panneaudebas = new OptionCourses();
+		this.add(panneaudebas, BorderLayout.SOUTH);
+		
 		this.add(l_interface3, BorderLayout.CENTER);
 		
 		this.add(lb, BorderLayout.NORTH);
