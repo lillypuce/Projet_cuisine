@@ -38,13 +38,13 @@ public class formulaire extends Panel implements ActionListener{
 		
 		l1=new Label("Sélectionnez ici la catégorie de la recette");
 		//l1.setFont(new Font("Arial", Font.BOLD, 12));
-		l1.setBounds(50,80,250,20);
+		l1.setBounds(50,80,380,20);
 		Choice cat = new Choice();
 		cat.addItem("Entrée");
 		cat.addItem("Plats");
 		cat.addItem("Dessert");
 		
-		cat.setBounds(50,100,380,20);
+		cat.setBounds(50,100,320,20);
 		
 		l2=new Label("Tapez ici la sous-catégorie de la recette");
 		l2.setBounds(50,180,250,20);
@@ -68,10 +68,10 @@ public class formulaire extends Panel implements ActionListener{
 		dos.setBounds(50,500,250,20);
 		
 		l6=new Label("Entrez ici les consignes de la recette");
-		l6.setBounds(330,80,250,20);
+		l6.setBounds(370,80,250,20);
 		text = new TextArea("ex: 1. Préchauffez le four Th8 (240°C). ",100,65);
 		text.setEditable(true);
-		text.setBounds(330, 100, 310, 310);
+		text.setBounds(370, 100, 310, 310);
 		
 		
 		Button b = new Button("Ajouter recette");
@@ -112,6 +112,17 @@ public class formulaire extends Panel implements ActionListener{
 		            		String ti=noming1.toLowerCase ();
 		            		ti = ti.replaceAll("\\s", "_");
 		            		
+		            		Ingredient b = new Ingredient(ti,noming1);
+		            		m.dicoIngredients.put(ti,b);
+		            		Ingredient ingredient_test2 = m.dicoIngredients.get(ti);
+		            		if(ingredient_test2.id.compareTo(ti) == 0) {
+		            			if(ingredient_test2.recettes.contains(tid) == false) {
+		            				ingredient_test2.recettes.add(tid);
+		            				
+		            			}
+		            			
+		            		}
+		            	
 		            		String ingdos1 = ingdos[i];
 		            		String td = ingdos1.toLowerCase ();
 		            		
@@ -166,8 +177,11 @@ public class formulaire extends Panel implements ActionListener{
 						}
 		            	
 	            	}
+	            	System.out.println(m.dicoIngredients);
+	            	
 	            }
 			});
+		 
 		 
 		 this.add(l0);
 		 
