@@ -13,10 +13,6 @@ import java.util.Map;
 
 public class formulaire extends Panel implements ActionListener{
 	
-	public Map<String, Ingredient> NouvdicoIngredients = new HashMap<String, Ingredient>();
-	public Map<String, RecetteModele> NouvdicoRecettes  = new HashMap<String, RecetteModele>();
-	Map<String, String> NouvRecette = new HashMap<String, String>();
-	
 	Modele m;
 	public formulaire() {
 		
@@ -82,42 +78,27 @@ public class formulaire extends Panel implements ActionListener{
 	            	String tid=texnom.toLowerCase ();
 	            	tid = tid.replaceAll("\\s", "_");
 	            	
-	            	String[] test =ting.split(",",5);
+	            	String[] Tting =ting.split(",",5);
 	            	
-	            	for (String a : test)
-	                    System.out.println(a);
+	            	String[] Ttdos = tdos.split(",",5);
+	            
 	            	
-	            	for (int i=0;i<test.length;i++) {
-	            		String t=test[i];
+	            	for (int i=0;i<Tting.length;i++) {
+	            		String t=Tting[i];
 	            		String ti=t.toLowerCase ();
 	            		ti = ti.replaceAll("\\s", "_");
 	            		
-	            		///test on met les nouvelles donnée dans un nouveau dico
+	            		///on met les nouvelles donnée dans dicoIngredients
 	            		Ingredient b = new Ingredient(ti,t);
-	            		//m.dicoIngredients.put(ti,b);
-	            		NouvdicoIngredients.put(ti, b);
+	            		m.dicoIngredients.put(ti,b);
 	            	}
-	            	///test on met les nouvelles donnée dans un nouveau dico
+	            	///on met les nouvelles donnée dans dicoRecettes
 	            	RecetteModele r= new RecetteModele(tid,texnom,tcat,tscat);
-	            	NouvdicoRecettes.put(tid, r);
+	            	m.dicoRecettes.put(tid, r);
 	            	
-	                NouvRecette.put("categorie", tcat);
-	                NouvRecette.put("SousCategorie", tscat);
-	                NouvRecette.put("nom", texnom);
-	                NouvRecette.put("id", tid);
-	                NouvRecette.put("ingredients", ting);
-	                NouvRecette.put("quantite", tdos);
-	                NouvRecette.put("consigne", Ttext);
 	                
-	                //Ingredient i = new Ingredient(ting,tid);
-	                //NouvdicoIngredients.put(tid, i);
-	                
-	                
-	                System.out.println(NouvdicoIngredients);
-	                System.out.println(NouvdicoRecettes);
-	                
-	                System.out.println(NouvRecette);
-	                //System.out.println(m.dicoIngredients);
+	                System.out.println(m.dicoIngredients);
+	                System.out.println(m.dicoRecettes);
 	                 
 	            }
 			});
