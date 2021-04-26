@@ -15,10 +15,6 @@ public class Interface_fen_2 extends Frame implements WindowListener, ItemListen
 	
 	public Interface_fen_2() throws FileNotFoundException, IOException, ParseException {
 		
-		Modele m = new Modele();
-		Controleur ctrl = new Controleur(m);
-		Ajouter_recette ar = new Ajouter_recette();
-		
 		 
 		this.setPreferredSize(new Dimension(1050,680));
 		this.setLayout(new BorderLayout());
@@ -60,7 +56,6 @@ public class Interface_fen_2 extends Frame implements WindowListener, ItemListen
 	public void windowClosing(WindowEvent arg0) {
 		// TODO Auto-generated method stub
 		this.dispose();
-		
 	}
 
 	@Override
