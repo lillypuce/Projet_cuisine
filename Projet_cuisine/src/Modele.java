@@ -42,7 +42,7 @@ public class Modele  extends Observable{
 		JSONArray ja_recette = (JSONArray) jo_recette.get("recettes");
 
 		dicoRecettes = new HashMap<String,RecetteModele>();
-
+		dicoIngredients = new HashMap<String, Ingredient>();
 		Ing_Recettes = new HashMap<String,ArrayList<String>>();
 		
 		//REMPLISSAGE DU DICTIONNAIRE POUR LES RECETTES
@@ -93,7 +93,7 @@ public class Modele  extends Observable{
 		ArrayList<String> consig = new ArrayList<>();
 		
 		
-		
+
 		
 		
 		
