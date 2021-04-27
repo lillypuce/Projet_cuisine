@@ -103,6 +103,7 @@ public class formulaire extends Panel implements ActionListener{
 	            	ArrayList<ArrayList<String>> al = new ArrayList<>();
 	            	ArrayList<String> al2 = new ArrayList<>();
 	            	
+	            	
 	            	if (noming.length != ingdos.length) {
 	            		JOptionPane.showMessageDialog(null, "Les valeurs entrées dans les ingrédients et le dosage sont incorrectes");
 	            	}
@@ -111,16 +112,15 @@ public class formulaire extends Panel implements ActionListener{
 		            		String noming1=noming[i];
 		            		String ti=noming1.toLowerCase ();
 		            		ti = ti.replaceAll("\\s", "_");
-		            		
+		            		//Ingrédients 
 		            		Ingredient b = new Ingredient(ti,noming1);
-		            		m.dicoIngredients.put(ti,b);
-		            		Ingredient ingredient_test2 = m.dicoIngredients.get(ti);
-		            		if(ingredient_test2.id.compareTo(ti) == 0) {
-		            			if(ingredient_test2.recettes.contains(tid) == false) {
-		            				ingredient_test2.recettes.add(tid);
-		            				
+		            		m.dicoIngredients.putIfAbsent(ti, b);
+		            		Ingredient ingredientR = m.dicoIngredients.get(ti);
+		            		
+		            		if(ingredientR.id.compareTo(ti) == 0) {
+		            			if(ingredientR.recettes.contains(tid) == false) {
+		            				ingredientR.recettes.add(tid);
 		            			}
-		            			
 		            		}
 		            	
 		            		String ingdos1 = ingdos[i];
@@ -130,7 +130,8 @@ public class formulaire extends Panel implements ActionListener{
 		            		al2.add(td);
 		            		al.add(al2);
 		            		al2 = new ArrayList<>();
-		            	}
+			            		}
+			            	}
 		            	
 		            	//Consignes
 		            	String[] consig = tconsig.split("\n");
@@ -175,10 +176,6 @@ public class formulaire extends Panel implements ActionListener{
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
-		            	
-	            	}
-	            	System.out.println(m.dicoIngredients);
-	            	
 	            }
 			});
 		 
