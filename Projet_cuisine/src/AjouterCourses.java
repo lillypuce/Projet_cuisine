@@ -13,6 +13,7 @@ public class AjouterCourses extends Panel{
 	
 	Modele m;
 	public static List l;
+	public static ArrayList<String> l2;
 	
 	public AjouterCourses() {
 		
@@ -21,7 +22,7 @@ public class AjouterCourses extends Panel{
 		b.setBackground(new Color(209,200,194));
 		
 		l = new List(29);
-		ArrayList<String> l2 = new ArrayList<>();
+		l2 = new ArrayList<>();
 		
 		
 		b.addActionListener(new ActionListener() {

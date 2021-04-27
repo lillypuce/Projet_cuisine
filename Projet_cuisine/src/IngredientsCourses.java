@@ -11,7 +11,7 @@ public class IngredientsCourses extends Panel implements Observer{
 	
 	public static int taille=15;
 	
-	Checkbox[] ingredients;
+	static Checkbox[] ingredients;
 	Modele m;
 	
 	public IngredientsCourses(ItemListener l, Modele m) {
