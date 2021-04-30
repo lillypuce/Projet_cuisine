@@ -130,9 +130,7 @@ public class formulaire extends Panel implements ActionListener{
 		            		al2.add(td);
 		            		al.add(al2);
 		            		al2 = new ArrayList<>();
-			            		}
 			            	}
-		            	
 		            	//Consignes
 		            	String[] consig = tconsig.split("\n");
 		            	
@@ -187,6 +185,7 @@ public class formulaire extends Panel implements ActionListener{
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
+	            	}
 	            }
 			});
 		 
