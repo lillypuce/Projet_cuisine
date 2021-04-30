@@ -1,8 +1,15 @@
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +26,8 @@ import org.json.simple.parser.ParseException;
 public class Modele  extends Observable{
 
 	public ArrayList<ImagesModele> images;
+	
+	formulaire f;
 	
 	public Map<String,ArrayList<String>> Ing_Recettes;
 	public static HashMap<String, RecetteModele> dicoRecettes = new HashMap<String,RecetteModele>();
@@ -79,18 +88,88 @@ public class Modele  extends Observable{
 			dicoRecettes.put(id, l);
 			
 		}
+	
 		
-		//CHARGEMENT DES RECETTES AJOUTEE DANS RECETTEAJOUTEE.TXT
-		File file = new File("recetteajoutee.txt");
-		FileReader fr = new FileReader(file);
-		BufferedReader br = new BufferedReader(fr);
+		//Object obj_recette_ajoutee = new JSONParser().parse(new FileReader("recetteajoutee.json"));
+		//JSONObject jo_recette_ajoutee = (JSONObject) obj_recette_ajoutee;
 		
-		String id2;
-		String nom;
-		String categ;
-		String sous_categ;
-		ArrayList<ArrayList<String>> ing = new ArrayList<>();
-		ArrayList<String> consig = new ArrayList<>();
+		
+		ArrayList<String>  recup_id=new ArrayList<String>(); 
+	    ArrayList<String>  recup_nom=new ArrayList<String>(); 
+	    ArrayList<String>  recup_cat=new ArrayList<String>(); 
+	    ArrayList<String>  recup_scat=new ArrayList<String>(); 
+	    ArrayList<String>  recup_ing=new ArrayList<String>(); 
+	    ArrayList<String>  recup_dos=new ArrayList<String>(); 
+	    ArrayList<String>  recup_consigne=new ArrayList<String>(); 
+		
+		
+
+		try
+	    {
+		  File file = new File("recetteajoutee.txt");
+		  FileReader fr = new FileReader(file);
+	      BufferedReader br = new BufferedReader(fr);
+	      StringBuffer sb = new StringBuffer();
+	      String line;
+	      
+	      
+	      while((line = br.readLine()) != null)
+	      {
+	    	  String[] contenue = line.split(":");
+	    		if(contenue[0].equals("id")) {
+	    			recup_id.add(contenue[1]);
+	    		}
+	    		if(contenue[0].equals("nom")) {
+	    			recup_nom.add(contenue[1]);
+	    		}
+	    		if(contenue[0].equals("catégorie")) {
+	    			recup_cat.add(contenue[1]);
+	    		}
+	    		if(contenue[0].equals("sous_catégorie")) {
+	    			recup_scat.add(contenue[1]);
+	    		}
+	    		if(contenue[0].equals("ingrédient")) {
+	    			recup_ing.add(contenue[1]);
+	    		}
+	    		if(contenue[0].equals("dosage")) {
+	    			recup_dos.add(contenue[1]);
+	    		}
+	    		if(contenue[0].equals("consigne")) {
+	    			recup_consigne.add(contenue[1]);
+	    		}
+	      }
+	      fr.close();
+	      
+	    }
+	    catch(IOException e)
+	    {
+	      e.printStackTrace();
+	    }
+		
+	
+		
+		for(int i=0;i<recup_id.size();i++) {
+			String id = recup_id.get(i);
+			String nom = recup_nom.get(i);
+			String categorie = recup_cat.get(i);
+			String sous_categorie = recup_scat.get(i);
+			
+			RecetteModele l = new RecetteModele(id,nom,categorie,sous_categorie);
+			
+			String tempo = recup_ing.get(i);
+			String[] ing_temp = tempo.split(",");
+			
+			//System.out.println(dicoRecettes.get("margherita").ingredients);
+			
+			//String tempo2 = recup_dos.get(i);
+			
+			for(int j = 0;j<ing_temp.length-1;j++) {
+				l.ingredients.add(ing_temp[j]);
+			}
+			l.consignes.add(recup_consigne.get(i));
+			
+			dicoRecettes.put(id, l);
+		}
 		
 		
 
@@ -142,7 +221,7 @@ public class Modele  extends Observable{
 		}
 		
 	
-	public Modele(String dir){
+	public Modele(String dir) throws ClassNotFoundException, IOException{
 
 		File repImages = new File(dir);
 		File[] imagesListe = repImages.listFiles();
@@ -151,7 +230,7 @@ public class Modele  extends Observable{
 			String nomImage = file.getName().split("\\.")[0];
 			this.images.add(new ImagesModele(nomImage, "images/"+file.getName(),0));
 		}
-		
+
 	}
 
 	public void select_categ(Integer item) {
@@ -216,4 +295,6 @@ public class Modele  extends Observable{
 		this.setChanged();
 		this.notifyObservers(Interface_fen_3.l_interface3.getItem(this.recette_ing_selectionnee));
 	}
+	
+	
 }

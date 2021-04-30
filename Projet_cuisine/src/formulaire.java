@@ -26,7 +26,10 @@ public class formulaire extends Panel implements ActionListener{
 	
 	Modele m;
 	
+	public static ArrayList<String> id_recette_ajoutee;
+	
 	public formulaire() throws FileNotFoundException, IOException, ParseException {
+		id_recette_ajoutee = new ArrayList<String>();
 		
 		Label l0,l1,l2,l3,l4,l5,l6;
 		TextArea text;
@@ -96,6 +99,8 @@ public class formulaire extends Panel implements ActionListener{
 	            	String tid=texnom.toLowerCase ();
 	            	tid = tid.replaceAll("\\s", "_");
 	            	
+	            	id_recette_ajoutee.add(tid);
+	            	
 	            	//Ingrédients et dosages
 	            	String[] noming = ting.split(",");
 	            	String[] ingdos = tdos.split(",");
@@ -159,25 +164,30 @@ public class formulaire extends Panel implements ActionListener{
 		            	if (m.dicoRecettes.get(tid).categorie.equals("Entrée")) {
 		            		ListeRecettes.lst_entree.add(m.dicoRecettes.get(tid).nom);
 		            	}
+		            	System.out.println(m.dicoRecettes.get(tid));
+		            
 
 		            	try {
 							FileWriter fw = new FileWriter("recetteajoutee.txt", true);
 							fw.write("[\n");
-							fw.write(tid + "\n");
-							fw.write(texnom + "\n");
-							fw.write(tcat + "\n");
-							fw.write(tscat + "\n");
-							fw.write(ting + "\n");
-							fw.write(tdos + "\n");
-							fw.write(tconsig + "\n");
-							fw.write("]\n");
+							fw.write("id"+":"+tid+"\n");
+							fw.write("nom"+":"+texnom+"\n");
+							fw.write("catégorie"+":"+tcat+"\n");
+							fw.write("sous_catégorie"+":"+tscat+"\n");
+							fw.write("ingrédient"+":"+ting+"\n");
+							fw.write("dosage"+":"+tdos+"\n");
+							fw.write("consigne"+":"+tconsig+"\"");
+							fw.write("\n]\n");
 							fw.close();
+				
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
 	            }
 			});
+		 
+		 System.out.println(id_recette_ajoutee);
 		 
 		 
 		 this.add(l0);
