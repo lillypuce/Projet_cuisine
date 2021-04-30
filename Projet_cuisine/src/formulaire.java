@@ -8,15 +8,10 @@ import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.swing.JOptionPane;
 
@@ -65,13 +60,13 @@ public class formulaire extends Panel implements ActionListener{
 		TextField ing = new TextField("ex: sel,poivre..."); 
 		ing.setBounds(50,400,250,20);
 		
-		l5=new Label("Tapez ici la quatité de l'ingrédients");
+		l5=new Label("Tapez ici la quantité de l'ingrédients");
 		l5.setBounds(50,480,250,20);
 		TextField dos = new TextField("ex: 2g,3g"); 
 		dos.setBounds(50,500,250,20);
 		
 		l6=new Label("Entrez ici les consignes de la recette");
-		l6.setBounds(370,80,250,20);
+		l6.setBounds(440,80,250,20);
 		text = new TextArea("ex: 1. Préchauffez le four Th8 (240°C). ",100,65);
 		text.setEditable(true);
 		text.setBounds(370, 100, 310, 310);
@@ -165,18 +160,26 @@ public class formulaire extends Panel implements ActionListener{
 		            		ListeRecettes.lst_entree.add(m.dicoRecettes.get(tid).nom);
 		            	}
 		            	System.out.println(m.dicoRecettes.get(tid));
-		            
-
+		            	
+		            	
+		            	//Enregistrement des recettes dans recetteajoutee.txt
+		            	String[] sing = ting.split(",");
+		            	String[] sdos = tdos.split(",");
+		            	for(int i=0;i<sing.length;i++) {
+		            		
+		            	}
+		            	
 		            	try {
 							FileWriter fw = new FileWriter("recetteajoutee.txt", true);
-							fw.write("[\n");
-							fw.write("id"+":"+tid+"\n");
-							fw.write("nom"+":"+texnom+"\n");
-							fw.write("catégorie"+":"+tcat+"\n");
-							fw.write("sous_catégorie"+":"+tscat+"\n");
-							fw.write("ingrédient"+":"+ting+"\n");
-							fw.write("dosage"+":"+tdos+"\n");
-							fw.write("consigne"+":"+tconsig+"\"");
+							fw.write("id:"+tid+"\n");
+							fw.write("nom:"+texnom+"\n");
+							fw.write("catégorie:"+tcat+"\n");
+							fw.write("sous_catégorie:"+tscat+"\n");
+							fw.write("ingrédient:"+ting+"\n");
+							fw.write("dosage:"+tdos+"\n");
+							for (String consig2 : al3) {
+								fw.write("consignes:"+consig2+"\n");
+							}
 							fw.write("\n]\n");
 							fw.close();
 				
