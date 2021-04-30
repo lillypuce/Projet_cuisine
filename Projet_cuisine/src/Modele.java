@@ -108,57 +108,64 @@ public class Modele  extends Observable{
 	    ArrayList<String> recup_ing2=new ArrayList<>();
 	    ArrayList<String> recup_consigne=new ArrayList<>(); 
 
-		try
-	    {
-		  File file = new File("recetteajoutee.txt");
-		  FileReader fr = new FileReader(file);
-	      BufferedReader br = new BufferedReader(fr);
-	      StringBuffer sb = new StringBuffer();
-	      String line;
+		try{
+			File file = new File("recetteajoutee.txt");
+			FileReader fr = new FileReader(file);
+			BufferedReader br = new BufferedReader(fr);
+			StringBuffer sb = new StringBuffer();
+			String line;
 	      
-	      ArrayList<String> ing1 = new ArrayList<>();
-	      ArrayList<String> dos1 = new ArrayList<>();
-	      
-	      while((line = br.readLine()) != null)
-	      {
-	    	  String[] contenue = line.split(":");
-	    		if(contenue[0].equals("id")) {
-	    			recup_id=contenue[1];
+			ArrayList<String> ing1 = new ArrayList<>();
+			ArrayList<String> dos1 = new ArrayList<>();
+			
+			String[] c1 = null;
+			
+			while((line = br.readLine()) != null){
+	    	  
+				String[] contenue = line.split(":");
+				
+				if(contenue[0].equals("id")) {
+					recup_id=contenue[1];
 	    		}
+				
 	    		if(contenue[0].equals("nom")) {
 	    			recup_nom=contenue[1];
-	    			
 	    		}
+	    		
 	    		if(contenue[0].equals("catégorie")) {
 	    			if (contenue[1].equals("Entrée")) {
-	    				if (reglage_entree.equals("EntrÃ©e")) {
-	    					
+	    				if (reglage_entree.equals("EntrÃ©e")) {	
 	    					recup_cat="EntrÃ©e";	
-	    				}
+	    					}
 	    			}
 	    			else {
 	    				recup_cat=contenue[1];
 	    			}
 	    		}
+	    		
 	    		if(contenue[0].equals("sous_catégorie")) {
 	    			recup_scat=contenue[1];
 	    		}
+	    		
 	    		if(contenue[0].equals("ingrédient")) {
-	    			String[] c1 = contenue[1].split(",");
+	    			c1 = contenue[1].split(",");
 	    			for (String s : c1) {
 	    				ing1.add(s);
 	    			}
-	    		}
+	   			}
+	    		
 	    		if(contenue[0].equals("dosage")) {
 	    			String[] c2 = contenue[1].split(",");
 	    			for (String s : c2) {
 	    				dos1.add(s);
 	    			}
-	    		}
-	    		if(contenue[0].equals("consignes")) {
-	    			recup_consigne.add(contenue[1]);
-	    		}
+	   			}
 	    		
+	    		if(contenue[0].equals("consignes")) {
+	    			if (contenue[1]!="") {
+	    				recup_consigne.add(contenue[1]);
+	    			}
+	    		}
 	    		
 	    		//On met les recettes ajoutées dans dicoRecettes
 	    		if (contenue[0].equals("]")) {
@@ -176,8 +183,20 @@ public class Modele  extends Observable{
 	    			dicoRecettes.put(recup_id,l);
 	    			
 	    			//Insertion dans le dicoIngredients
-	    			for (int i=0; i<ing1.size(); i++) {
-	    				l.ingredients.add(ing1.get(i));
+	    			for (int i=0; i<c1.length; i++) {
+	    				String insereing = c1[i];
+	    				String tlc_ing = insereing.toLowerCase();
+	    				tlc_ing=tlc_ing.replaceAll("\\s","_");
+	    				
+	    				Ingredient b = new Ingredient(tlc_ing, insereing);
+	    				dicoIngredients.putIfAbsent(tlc_ing, b);
+	    				Ingredient ingredientR = dicoIngredients.get(tlc_ing);
+	    				
+	    				if (ingredientR.id.compareTo(tlc_ing)==0) {
+	    					if (ingredientR.recettes.contains(recup_id) == false) {
+	    						ingredientR.recettes.add(recup_id);
+	    					}
+	    				}
 	    			}
 
 	    			//On vide les listes
@@ -225,7 +244,7 @@ public class Modele  extends Observable{
 			//récupération dans le dicoRecettes de la valeur de l'id
 			RecetteModele re = dicoRecettes.get(id_re);
 			
-			//Récupération des ingrédients 
+			//Récupération des ingrédients
 			JSONArray r1 = (JSONArray)re.ingredients;
 			for(int j = 0;j<r1.size();j++) {
 				JSONObject r_ing = (JSONObject)r1.get(j);
