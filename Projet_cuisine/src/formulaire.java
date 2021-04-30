@@ -103,86 +103,85 @@ public class formulaire extends Panel implements ActionListener{
 	            	ArrayList<ArrayList<String>> al = new ArrayList<>();
 	            	ArrayList<String> al2 = new ArrayList<>();
 	            	
-	            	
-	            	if (noming.length != ingdos.length) {
-	            		JOptionPane.showMessageDialog(null, "Les valeurs entrées dans les ingrédients et le dosage sont incorrectes");
+	            	if (tscat.equals("") | texnom.equals("") | ting.equals("") | tdos.equals("") | tconsig.equals("")) {
+	            		JOptionPane.showMessageDialog(null, "Certaines valeurs sont vides");
 	            	}
 	            	else {
-		            	for (int i=0;i<noming.length;i++) {
-		            		String noming1=noming[i];
-		            		String ti=noming1.toLowerCase ();
-		            		ti = ti.replaceAll("\\s", "_");
-		            		//Ingrédients 
-		            		Ingredient b = new Ingredient(ti,noming1);
-		            		m.dicoIngredients.putIfAbsent(ti, b);
-		            		Ingredient ingredientR = m.dicoIngredients.get(ti);
-		            		
-		            		if(ingredientR.id.compareTo(ti) == 0) {
-		            			if(ingredientR.recettes.contains(tid) == false) {
-		            				ingredientR.recettes.add(tid);
-		            			}
-		            		}
-		            	
-		            		String ingdos1 = ingdos[i];
-		            		String td = ingdos1.toLowerCase ();
-		            		
-		            		al2.add(ti);
-		            		al2.add(td);
-		            		al.add(al2);
-		            		al2 = new ArrayList<>();
+	            		if (noming.length != ingdos.length) {
+	            		JOptionPane.showMessageDialog(null, "Les valeurs entrées dans les ingrédients et le dosage sont incorrectes");
+	            		}
+	            		else {
+			            	for (int i=0;i<noming.length;i++) {
+			            		String noming1=noming[i];
+			            		String ti=noming1.toLowerCase ();
+			            		ti = ti.replaceAll("\\s", "_");
+			            		
+			            		//Ingrédients 
+			            		Ingredient b = new Ingredient(ti,noming1);
+			            		m.dicoIngredients.putIfAbsent(ti, b);
+			            		Ingredient ingredientR = m.dicoIngredients.get(ti);
+			            		
+			            		if(ingredientR.id.compareTo(ti) == 0) {
+			            			if(ingredientR.recettes.contains(tid) == false) {
+			            				ingredientR.recettes.add(tid);
+			            			}
+			            		}
+			            	
+			            		String ingdos1 = ingdos[i];
+			            		String td = ingdos1.toLowerCase ();
+			            		
+			            		al2.add(ti);
+			            		al2.add(td);
+			            		al.add(al2);
+			            		al2 = new ArrayList<>();
+				            }
+			            	//Consignes
+			            	String[] consig = tconsig.split("\n");
+			            	
+			            	ArrayList<String> al3 = new ArrayList<>();
+			            	
+			            	for (int i=0; i<consig.length; i++) {
+			            		al3.add(consig[i]);
 			            	}
-		            	//Consignes
-		            	String[] consig = tconsig.split("\n");
-		            	
-		            	ArrayList<String> al3 = new ArrayList<>();
-		            	
-		            	for (int i=0; i<consig.length; i++) {
-		            		al3.add(consig[i]);
-		            	}
-		            	
-		            	RecetteModele r= new RecetteModele(tid,texnom,tcat,tscat);
-		                
-		            	r.affichage_ingredients = al;
-		            	r.consignes = al3;
-		            	
-		            	m.dicoRecettes.put(tid, r);
-		            	
-		            	//Insertion des recettes dans les listes des categories pour ensuite être lu par les autres classes
-		            	if (m.dicoRecettes.get(tid).categorie.equals("Plats")) {
-		            		ListeRecettes.lst_plats.add(m.dicoRecettes.get(tid).nom);
-		            	}
-		            	if (m.dicoRecettes.get(tid).categorie.equals("Dessert")) {
-		            		ListeRecettes.lst_desserts.add(m.dicoRecettes.get(tid).nom);
-		            	}
-		            	if (m.dicoRecettes.get(tid).categorie.equals("Entrée")) {
-		            		ListeRecettes.lst_entree.add(m.dicoRecettes.get(tid).nom);
-		            	}
-		            	
-		            	//Enregistrement des recettes dans recetteajoutee.txt
-		            	String[] sing = ting.split(",");
-		            	String[] sdos = tdos.split(",");
-		            	for(int i=0;i<sing.length;i++) {
-		            		
-		            	}
-		            	
-		            	try {
-							FileWriter fw = new FileWriter("recetteajoutee.txt", true);
-							fw.write("id:"+tid+"\n");
-							fw.write("nom:"+texnom+"\n");
-							fw.write("catégorie:"+tcat+"\n");
-							fw.write("sous_catégorie:"+tscat+"\n");
-							fw.write("ingrédient:"+ting+"\n");
-							fw.write("dosage:"+tdos+"\n");
-							for (String consig2 : al3) {
-								fw.write("consignes:"+consig2+"\n");
+			            	
+			            	RecetteModele r= new RecetteModele(tid,texnom,tcat,tscat);
+			                
+			            	r.affichage_ingredients = al;
+			            	r.consignes = al3;
+			            	
+			            	m.dicoRecettes.put(tid, r);
+			            	
+			            	//Insertion des recettes dans les listes des categories pour ensuite être lu par les autres classes
+			            	if (m.dicoRecettes.get(tid).categorie.equals("Plats")) {
+			            		ListeRecettes.lst_plats.add(m.dicoRecettes.get(tid).nom);
+			            	}
+			            	if (m.dicoRecettes.get(tid).categorie.equals("Dessert")) {
+			            		ListeRecettes.lst_desserts.add(m.dicoRecettes.get(tid).nom);
+			            	}
+			            	if (m.dicoRecettes.get(tid).categorie.equals("Entrée")) {
+			            		ListeRecettes.lst_entree.add(m.dicoRecettes.get(tid).nom);
+			            	}
+			            	
+			            	//Enregistrement des recettes dans recetteajoutee.txt
+			            	try {
+								FileWriter fw = new FileWriter("recetteajoutee.txt", true);
+								fw.write("id:"+tid+"\n");
+								fw.write("nom:"+texnom+"\n");
+								fw.write("catégorie:"+tcat+"\n");
+								fw.write("sous_catégorie:"+tscat+"\n");
+								fw.write("ingrédient:"+ting+"\n");
+								fw.write("dosage:"+tdos+"\n");
+								for (String consig2 : al3) {
+									fw.write("consignes:"+consig2+"\n");
+								}
+								fw.write("\n]\n");
+								fw.close();
+					
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
 							}
-							fw.write("\n]\n");
-							fw.close();
-				
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
+		            	}
 	            	}
 	            }
 			});
