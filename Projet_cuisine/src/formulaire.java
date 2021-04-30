@@ -157,8 +157,6 @@ public class formulaire extends Panel implements ActionListener{
 		            	if (m.dicoRecettes.get(tid).categorie.equals("Entrée")) {
 		            		ListeRecettes.lst_entree.add(m.dicoRecettes.get(tid).nom);
 		            	}
-		            	System.out.println(m.dicoRecettes.get(tid));
-		            	
 		            	
 		            	//Enregistrement des recettes dans recetteajoutee.txt
 		            	String[] sing = ting.split(",");
@@ -188,9 +186,6 @@ public class formulaire extends Panel implements ActionListener{
 	            	}
 	            }
 			});
-		 
-		 System.out.println(id_recette_ajoutee);
-		 
 		 
 		 this.add(l0);
 		 
