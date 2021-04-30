@@ -43,6 +43,8 @@ public class Modele  extends Observable{
 	
 	public static ArrayList<String> al = new ArrayList<>();
 	
+	public String reglage_entree=""; //Pour régler le problème des accents avec "Entrée"
+	
 	public Modele() throws FileNotFoundException, IOException, ParseException {
 		
 		Object obj_recette = new JSONParser().parse(new FileReader("recette.json"));
@@ -71,6 +73,10 @@ public class Modele  extends Observable{
 			ArrayList<ArrayList<String>> l_ingredient = new ArrayList<>();
 			ArrayList<String> l_ingredient2 = new ArrayList<>();
 			
+			if (categorie.equals("EntrÃ©e")) {
+				reglage_entree = "EntrÃ©e";
+			}
+			
 			for(int j=0;j<ingredient.size();j++) {
 				JSONObject ing = (JSONObject)ingredient.get(j);
 				String id_ingredient = (String) ing.get("id");
@@ -94,15 +100,13 @@ public class Modele  extends Observable{
 		//JSONObject jo_recette_ajoutee = (JSONObject) obj_recette_ajoutee;
 		
 		
-		ArrayList<String>  recup_id=new ArrayList<String>(); 
-	    ArrayList<String>  recup_nom=new ArrayList<String>(); 
-	    ArrayList<String>  recup_cat=new ArrayList<String>(); 
-	    ArrayList<String>  recup_scat=new ArrayList<String>(); 
-	    ArrayList<String>  recup_ing=new ArrayList<String>(); 
-	    ArrayList<String>  recup_dos=new ArrayList<String>(); 
-	    ArrayList<String>  recup_consigne=new ArrayList<String>(); 
-		
-		
+		String recup_id="";
+	    String recup_nom="";
+	    String recup_cat="";
+	    String recup_scat="";
+	    ArrayList<ArrayList<String>> recup_ing=new ArrayList<>();
+	    ArrayList<String> recup_ing2=new ArrayList<>();
+	    ArrayList<String> recup_consigne=new ArrayList<>(); 
 
 		try
 	    {
@@ -112,30 +116,75 @@ public class Modele  extends Observable{
 	      StringBuffer sb = new StringBuffer();
 	      String line;
 	      
+	      ArrayList<String> ing1 = new ArrayList<>();
+	      ArrayList<String> dos1 = new ArrayList<>();
 	      
 	      while((line = br.readLine()) != null)
 	      {
 	    	  String[] contenue = line.split(":");
 	    		if(contenue[0].equals("id")) {
-	    			recup_id.add(contenue[1]);
+	    			recup_id=contenue[1];
 	    		}
 	    		if(contenue[0].equals("nom")) {
-	    			recup_nom.add(contenue[1]);
+	    			recup_nom=contenue[1];
+	    			
 	    		}
 	    		if(contenue[0].equals("catégorie")) {
-	    			recup_cat.add(contenue[1]);
+	    			if (contenue[1].equals("Entrée")) {
+	    				if (reglage_entree.equals("EntrÃ©e")) {
+	    					
+	    					recup_cat="EntrÃ©e";	
+	    				}
+	    			}
+	    			else {
+	    				recup_cat=contenue[1];
+	    			}
 	    		}
 	    		if(contenue[0].equals("sous_catégorie")) {
-	    			recup_scat.add(contenue[1]);
+	    			recup_scat=contenue[1];
 	    		}
 	    		if(contenue[0].equals("ingrédient")) {
-	    			recup_ing.add(contenue[1]);
+	    			String[] c1 = contenue[1].split(",");
+	    			for (String s : c1) {
+	    				ing1.add(s);
+	    			}
 	    		}
 	    		if(contenue[0].equals("dosage")) {
-	    			recup_dos.add(contenue[1]);
+	    			String[] c2 = contenue[1].split(",");
+	    			for (String s : c2) {
+	    				dos1.add(s);
+	    			}
 	    		}
-	    		if(contenue[0].equals("consigne")) {
+	    		if(contenue[0].equals("consignes")) {
 	    			recup_consigne.add(contenue[1]);
+	    		}
+	    		
+	    		
+	    		//On met les recettes ajoutées dans dicoRecettes
+	    		if (contenue[0].equals("]")) {
+	    			for (int i=0;i<ing1.size();i++) {
+	    				recup_ing2.add(ing1.get(i));
+	    				recup_ing2.add(dos1.get(i));
+	    				recup_ing.add(recup_ing2);
+	    				recup_ing2 = new ArrayList<>();
+	    			}
+	    			
+	    			RecetteModele l = new RecetteModele(recup_id,recup_nom,recup_cat,recup_scat);
+	    			l.affichage_ingredients=recup_ing;
+	    			l.consignes=recup_consigne;
+	    			
+	    			dicoRecettes.put(recup_id,l);
+	    			
+	    			//Insertion dans le dicoIngredients
+	    			for (int i=0; i<ing1.size(); i++) {
+	    				l.ingredients.add(ing1.get(i));
+	    			}
+
+	    			//On vide les listes
+	    			ing1 = new ArrayList<>();
+	    			dos1 = new ArrayList<>();
+	    			recup_ing = new ArrayList<>();
+	    			recup_consigne = new ArrayList<>();
 	    		}
 	      }
 	      fr.close();
@@ -145,35 +194,6 @@ public class Modele  extends Observable{
 	    {
 	      e.printStackTrace();
 	    }
-		
-	
-		
-		for(int i=0;i<recup_id.size();i++) {
-			String id = recup_id.get(i);
-			String nom = recup_nom.get(i);
-			String categorie = recup_cat.get(i);
-			String sous_categorie = recup_scat.get(i);
-			
-			RecetteModele l = new RecetteModele(id,nom,categorie,sous_categorie);
-			
-			String tempo = recup_ing.get(i);
-			String[] ing_temp = tempo.split(",");
-			
-			//System.out.println(dicoRecettes.get("margherita").ingredients);
-			
-			//String tempo2 = recup_dos.get(i);
-			
-			for(int j = 0;j<ing_temp.length-1;j++) {
-				l.ingredients.add(ing_temp[j]);
-			}
-			l.consignes.add(recup_consigne.get(i));
-			
-			dicoRecettes.put(id, l);
-		}
-		
-		
-
-		
 		
 		
 		//REMPLISSAGE DU DICO POUR LES INGREDIENTS
