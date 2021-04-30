@@ -1,23 +1,37 @@
-id:margheritatest
-nom:MargheritaTest
+
+id:salade_rôtie
+nom:Salade rôtie
 catégorie:Entrée
-sous_catégorie:Pizza
-ingrédient:sel,poivre
-dosage:2g,3g
-consignes:1. Préchauffez le four Th8 (240°C).
-consignes:2. a
-consignes:3. b
+sous_catégorie:Salade
+ingrédient:salade de chêne,champignons,bâton de citronnelle,botte de cébette, sauce soja, gingembre, graine de sésame, huile de sésame
+dosage:4,4,2,1,50g,50g,20g,50g
+consignes:1. Enlevez les feuilles et gardez le cœur de la salade. Réservez les feuilles de côté.
+consignes:2. Coupez les champignons en lamelles. Entre les feuilles du cœur, mettez des algues et des lamelles de champignons.
+consignes:3. Faites rôtir le cœur à l’huile d’olive dans une poêle. Quand ils sont bien colorés et un peu cuits, sortez-les de la poêle. 
+consignes:4. Déglacez avec la sauce soja et l’huile de sésame. Quand c’est bien réduit, prenez un pinceau et laquez la salade.
+consignes:5. Mélangez et parsemez sur la salade
+consignes:6. Récupérez les feuilles de la salade. Faites-les blanchir dans une eau bouillante et salée avec une poignée de roquette. 
+consignes:7. Egouttez et mettez le tout dans une glaçante pour garder la chlorophylle. Mixez avec un peu d’huile de sésame.
+consignes:8. Coupez les anchois en petits morceaux et disposez-les sur la salade avec le condiment. 
+consignes:9. Mettez la salade au milieu de l’assiette, autour faites un cordon de coulis vert. 
+consignes:10. Perlez avec l’huile de sésame sur le coulis et quelques feuilles de coriandre Cress sur la salade.
 
 ]
-id:margheritatest2
-nom:MargheritaTest2
-catégorie:Plats
-sous_catégorie:Pizza
-ingrédient:sel,poivre,ail
-dosage:2g,3g,3
-consignes:1. Préchauffez le four Th8 (240°C).
-consignes:2. a
-consignes:3. b
-consignes:4. c
+id:salade_de_lentilles
+nom:Salade de lentilles
+catégorie:Entrée
+sous_catégorie:Salade
+ingrédient:lentilles corail, échalote, soupe de moutarde, soupe d'huile d'olive, tomate, demi-bouquet de coriandre, jus d'un citron, sel, poivre
+dosage:300g,1,1c.,3c.,2,1,1,10mg,5mg
+consignes:1. Préparez dans un premier temps les lentilles corail : lavez-les soigneusement et placez-les dans une casserole contenant 1 litre d’eau froide. 
+consignes:2. Montez le feu jusqu’à l’apparition de petites bulles à la surface de l’eau et à ce moment, poursuivez la cuisson de 10 minutes, jusqu’à ce que les lentilles soient bien tendres. 
+consignes:3. Egouttez les lentilles corail et laissez refroidir.
+consignes:4. Pelez puis émincez l’échalote, ciselez la coriandre et réservez. Mondez les tomates, retirez les pépins puis coupez-les en petits dés.
+consignes:5. Dans un bol, versez l’huile d’olive, le jus de citron, la moutarde et assaisonnez avec le sel et le poivre et mélangez bien pour former une vinaigrette.
+consignes:6. Dans un plat de service, mettez les lentilles et ajoutez les échalotes, les dés de tomates, la coriandre puis versez la vinaigrette et mélangez bien.
+consignes:7. Filmez le plat pour le couvrir et placez-le au réfrigérateur pendant au moins 1 heure.Quand le plat est bien frais vous pouvez le déguster !
+consignes:8. Très agréable l’été, vous pouvez aussi assaisonner votre salade de lentilles corail avec une pointe de curry ou de gingembre pour en varier les saveurs
 
 ]
+
+
