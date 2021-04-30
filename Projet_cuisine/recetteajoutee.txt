@@ -1,9 +1,23 @@
-[
-ex:_margherita...
-ex: Margherita...
-Entrée
-ex: Pizza
-ex: sel,poivre...
-ex: 2g,3g
-ex: 1. Préchauffez le four Th8 (240°C). 
+id:margheritatest
+nom:MargheritaTest
+catégorie:Entrée
+sous_catégorie:Pizza
+ingrédient:sel,poivre
+dosage:2g,3g
+consignes:1. Préchauffez le four Th8 (240°C).
+consignes:2. a
+consignes:3. b
+
+]
+id:margheritatest2
+nom:MargheritaTest2
+catégorie:Plats
+sous_catégorie:Pizza
+ingrédient:sel,poivre,ail
+dosage:2g,3g,3
+consignes:1. Préchauffez le four Th8 (240°C).
+consignes:2. a
+consignes:3. b
+consignes:4. c
+
 ]
